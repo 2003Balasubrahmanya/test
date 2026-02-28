@@ -217,21 +217,91 @@ footer p{color:#777;margin-top:10px;}
 
 <body>
 
-<header>
-  <div class="logo">TERRAFLUX</div>
+<header style="width:100%;position:fixed;top:0;left:0;background:#0f0f0f;
+box-shadow:0 4px 15px rgba(0,0,0,0.6);z-index:1000;font-family:Segoe UI, sans-serif;">
 
-  <div id="navLinks">
-    <a href="#">Home</a>
-    <a href="#" style="color:#D4AF37;">Logistics</a>
-    <a href="#">Warehousing</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-  </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:18px 8%;">
 
-  <div id="hamburger" onclick="toggleMenu()">
-    <span></span><span></span><span></span>
-  </div>
+        <!-- Logo (Clickable) -->
+        <div onclick="window.location.href='index.html'" 
+             style="color:#d4af37;font-size:22px;font-weight:700;letter-spacing:2px;cursor:pointer;">
+            TERRAFLUX
+        </div>
+
+        <!-- Navigation Links -->
+        <nav id="navLinks" style="display:flex;gap:35px;align-items:center;">
+            <a href="index.html" style="color:#d4af37;text-decoration:none;font-weight:500;transition:0.3s;">Home</a>
+            <a href="logistics.html" style="color:#d4af37;text-decoration:none;font-weight:500;transition:0.3s;">Logistics</a>
+            <a href="warehousing.html" style="color:#d4af37;text-decoration:none;font-weight:500;transition:0.3s;">Warehousing</a>
+            <a href="about.html" style="color:#d4af37;text-decoration:none;font-weight:500;transition:0.3s;">About</a>
+            <a href="contact.html" style="color:#d4af37;text-decoration:none;font-weight:500;transition:0.3s;">Contact</a>
+        </nav>
+
+        <!-- Hamburger Menu -->
+        <div id="hamburger" onclick="toggleMenu()" 
+             style="display:none;flex-direction:column;gap:6px;cursor:pointer;">
+            <span style="width:28px;height:3px;background:#d4af37;"></span>
+            <span style="width:28px;height:3px;background:#d4af37;"></span>
+            <span style="width:28px;height:3px;background:#d4af37;"></span>
+        </div>
+
+    </div>
 </header>
+
+<!-- Spacer -->
+<div style="height:85px;"></div>
+
+<script>
+function toggleMenu(){
+    var nav = document.getElementById("navLinks");
+    if(nav.style.display === "flex"){
+        nav.style.display = "none";
+    } else {
+        nav.style.display = "flex";
+        nav.style.flexDirection = "column";
+        nav.style.position = "absolute";
+        nav.style.top = "75px";
+        nav.style.right = "8%";
+        nav.style.background = "#141414";
+        nav.style.padding = "20px";
+        nav.style.borderRadius = "8px";
+        nav.style.boxShadow = "0 8px 20px rgba(0,0,0,0.7)";
+        nav.style.gap = "20px";
+    }
+}
+
+function checkScreen(){
+    var nav = document.getElementById("navLinks");
+    var ham = document.getElementById("hamburger");
+
+    if(window.innerWidth < 900){
+        nav.style.display = "none";
+        ham.style.display = "flex";
+    } else {
+        nav.style.display = "flex";
+        nav.style.flexDirection = "row";
+        nav.style.position = "static";
+        nav.style.background = "none";
+        ham.style.display = "none";
+    }
+}
+
+checkScreen();
+window.onresize = checkScreen;
+
+/* Gold Hover Effect */
+document.querySelectorAll("#navLinks a").forEach(link=>{
+    link.addEventListener("mouseover", function(){
+        this.style.color="#ffd700";
+        this.style.textShadow="0 0 8px rgba(212,175,55,0.8)";
+    });
+    link.addEventListener("mouseout", function(){
+        this.style.color="#d4af37";
+        this.style.textShadow="none";
+    });
+});
+</script>
+
 
 <!-- HERO -->
 <section class="hero">
