@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terraflux Navigation</title>
+
+<style>
+/* ===============================
+   MOBILE + DESKTOP NAVIGATION
+   Elephant Black | Gold Theme
+================================ */
+
+:root{
+    --black:#0D0D0D;
+    --gold:#D4AF37;
+    --text:#EDEDED;
+}
+
+/* Reset */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Georgia, "Times New Roman", serif;
+    background:#0D0D0D;
+    color:var(--text);
+}
+
+/* NAVBAR */
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(13,13,13,0.92);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(212,175,55,0.3);
+}
+
+.navbar{
+    max-width:1400px;
+    margin:auto;
+    padding:18px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    color:var(--gold);
+    font-size:1.2rem;
+    letter-spacing:2px;
+    font-weight:600;
+}
+
+/* LINKS */
+.nav-links{
+    display:flex;
+    gap:40px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:var(--text);
+    font-size:0.95rem;
+    letter-spacing:1px;
+    position:relative;
+    transition:0.3s ease;
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:2px;
+    background:var(--gold);
+    transition:0.3s ease;
+}
+
+.nav-links a:hover{
+    color:var(--gold);
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+/* HAMBURGER */
+.hamburger{
+    display:none;
+    flex-direction:column;
+    cursor:pointer;
+}
+
+.hamburger span{
+    width:26px;
+    height:3px;
+    background:var(--gold);
+    margin:4px 0;
+    transition:0.4s ease;
+}
+
+/* MOBILE MENU */
+@media(max-width:768px){
+
+    .nav-links{
+        position:fixed;
+        top:70px;
+        right:-100%;
+        width:260px;
+        height:calc(100vh - 70px);
+        background:#080808;
+        flex-direction:column;
+        padding:40px 25px;
+        gap:25px;
+        transition:0.5s ease;
+        border-left:1px solid rgba(212,175,55,0.3);
+    }
+
+    .nav-links.active{
+        right:0;
+    }
+
+    .hamburger{
+        display:flex;
+    }
+}
+
+/* HAMBURGER ANIMATION */
+.hamburger.active span:nth-child(1){
+    transform:rotate(45deg) translate(5px,5px);
+}
+.hamburger.active span:nth-child(2){
+    opacity:0;
+}
+.hamburger.active span:nth-child(3){
+    transform:rotate(-45deg) translate(6px,-6px);
+}
+
+/* Spacer for demo */
+.page-content{
+    padding-top:120px;
+    text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="navbar">
+        <div class="logo">TERRAFLUX</div>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="logistics.html">Logistics</a>
+            <a href="warehousing.html">Warehousing</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</header>
+
+<div class="page-content">
+    <section style="
+position:relative;
+height:100vh;
+overflow:hidden;
+font-family:Georgia, serif;
+color:white;
+">
+
+<!-- SLIDES -->
+<div id="slider" style="
+position:absolute;
+width:100%;
+height:100%;
+">
+
+<img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d"
+style="position:absolute;width:100%;height:100%;object-fit:cover;opacity:1;transition:opacity 1.5s ease;"
+class="slide">
+
+<img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231"
+style="position:absolute;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.5s ease;"
+class="slide">
+
+<img src="https://images.unsplash.com/photo-1553413077-190dd305871c"
+style="position:absolute;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.5s ease;"
+class="slide">
+
+<img src="https://images.unsplash.com/photo-1494412651409-8963ce7935a7"
+style="position:absolute;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.5s ease;"
+class="slide">
+
+</div>
+
+<!-- DARK OVERLAY -->
+<div style="
+position:absolute;
+width:100%;
+height:100%;
+background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.8));
+"></div>
+
+<!-- HERO CONTENT -->
+<div style="
+position:relative;
+z-index:2;
+height:100%;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:0 8%;
+">
+
+<h1 style="
+font-size:3rem;
+color:#D4AF37;
+margin-bottom:20px;
+letter-spacing:1px;
+">
+Global Logistics. Engineered Precision.
+</h1>
+
+<p style="
+max-width:800px;
+font-size:1.1rem;
+color:#E0E0E0;
+line-height:1.7;
+margin-bottom:35px;
+">
+Delivering scalable infrastructure, resilient supply chains,
+and enterprise logistics solutions designed for a dynamic global economy.
+</p>
+
+<a href="contact.html"
+style="
+background:#D4AF37;
+color:#000;
+padding:15px 35px;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s ease;
+"
+onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 15px 40px rgba(212,175,55,0.6)'"
+onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'"
+>
+Start Partnership
+</a>
+
+</div>
+</section>
+
+<script>
+const slides = document.querySelectorAll(".slide");
+let index = 0;
+
+if (slides.length > 0) {
+  setInterval(() => {
+    slides[index].style.opacity = "0";
+    index = (index + 1) % slides.length;
+    slides[index].style.opacity = "1";
+  }, 4000);
+}
+</script>
+<section style="
+background:#0f0f0f;
+padding:100px 8%;
+font-family:Georgia, serif;
+color:#EDEDED;
+">
+
+<div style="
+display:flex;
+flex-wrap:wrap;
+align-items:center;
+gap:60px;
+justify-content:center;
+">
+
+<!-- LEFT IMAGE -->
+<div style="flex:1; min-width:300px;">
+
+<img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7"
+style="
+width:100%;
+border-radius:15px;
+box-shadow:0 25px 60px rgba(0,0,0,0.6);
+transition:0.5s ease;
+"
+id="capImage"
+>
+
+</div>
+
+<!-- RIGHT CONTENT -->
+<div style="flex:1; min-width:300px;">
+
+<h2 style="
+color:#D4AF37;
+font-size:2.2rem;
+margin-bottom:25px;
+">
+Integrated Global Capabilities
+</h2>
+
+<p style="
+color:#CFCFCF;
+line-height:1.8;
+margin-bottom:35px;
+font-size:1.05rem;
+">
+Terraflux Global Ventures operates at the intersection of logistics engineering,
+operational intelligence, and scalable infrastructure. Our integrated ecosystem
+ensures seamless freight movement, warehouse optimization, and resilient
+distribution networks tailored for enterprise performance.
+</p>
+
+<div style="display:flex; flex-direction:column; gap:20px;">
+
+<div class="capCard" style="
+background:#151515;
+padding:20px 25px;
+border-radius:12px;
+border:1px solid rgba(212,175,55,0.2);
+transition:0.4s ease;
+">
+<h4 style="color:#D4AF37; margin-bottom:8px;">Supply Chain Optimization</h4>
+<p style="color:#CFCFCF;">Data-driven route planning & operational precision.</p>
+</div>
+
+<div class="capCard" style="
+background:#151515;
+padding:20px 25px;
+border-radius:12px;
+border:1px solid rgba(212,175,55,0.2);
+transition:0.4s ease;
+">
+<h4 style="color:#D4AF37; margin-bottom:8px;">Advanced Warehousing</h4>
+<p style="color:#CFCFCF;">Smart inventory control & scalable storage networks.</p>
+</div>
+
+<div class="capCard" style="
+background:#151515;
+padding:20px 25px;
+border-radius:12px;
+border:1px solid rgba(212,175,55,0.2);
+transition:0.4s ease;
+">
+<h4 style="color:#D4AF37; margin-bottom:8px;">Global Distribution</h4>
+<p style="color:#CFCFCF;">Multi-channel delivery with operational resilience.</p>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</section>
+
+<script>
+/* Image Hover Zoom */
+const capImage = document.getElementById("capImage");
+if(capImage){
+  capImage.addEventListener("mouseenter", ()=>{
+    capImage.style.transform="scale(1.05)";
+  });
+  capImage.addEventListener("mouseleave", ()=>{
+    capImage.style.transform="scale(1)";
+  });
+}
+
+/* Card Hover Effect */
+document.querySelectorAll(".capCard").forEach(card=>{
+  card.addEventListener("mouseenter", ()=>{
+    card.style.transform="translateX(10px)";
+    card.style.boxShadow="0 20px 40px rgba(212,175,55,0.2)";
+  });
+  card.addEventListener("mouseleave", ()=>{
+    card.style.transform="translateX(0)";
+    card.style.boxShadow="none";
+  });
+});
+</script>
+<section style="background:#000; padding:100px 20px; font-family: 'Playfair Display', serif; color:white; text-align:center; position:relative; overflow:hidden;">
+
+  <h2 style="font-size:42px; margin-bottom:20px; letter-spacing:2px;">
+    What Our Visitors Say
+  </h2>
+
+  <p style="color:#aaa; max-width:700px; margin:auto; margin-bottom:60px; font-size:18px;">
+    Experiences that speak beyond words. The spirit of strength and elegance lives here.
+  </p>
+
+  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px;">
+
+    <!-- Testimonial 1 -->
+    <div class="testimonial-card" style="background:rgba(255,255,255,0.05); backdrop-filter:blur(10px); padding:30px; border-radius:15px; width:300px; transition:0.5s; opacity:0; transform:translateY(50px);">
+      <p style="font-size:16px; color:#ddd;">
+        “The elegance of the design truly captures the majesty of the elephant. Absolutely stunning!”
+      </p>
+      <h4 style="margin-top:20px; color:#c9a227;">— Arjun Rao</h4>
+    </div>
+
+    <!-- Testimonial 2 -->
+    <div class="testimonial-card" style="background:rgba(255,255,255,0.05); backdrop-filter:blur(10px); padding:30px; border-radius:15px; width:300px; transition:0.5s; opacity:0; transform:translateY(50px);">
+      <p style="font-size:16px; color:#ddd;">
+        “A powerful blend of tradition and modern UI. The animations are smooth and premium.”
+      </p>
+      <h4 style="margin-top:20px; color:#c9a227;">— Sneha Patel</h4>
+    </div>
+
+    <!-- Testimonial 3 -->
+    <div class="testimonial-card" style="background:rgba(255,255,255,0.05); backdrop-filter:blur(10px); padding:30px; border-radius:15px; width:300px; transition:0.5s; opacity:0; transform:translateY(50px);">
+      <p style="font-size:16px; color:#ddd;">
+        “The black and gold theme gives it a royal feel. Truly a classy landing page.”
+      </p>
+      <h4 style="margin-top:20px; color:#c9a227;">— Vikram Sharma</h4>
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+  // Scroll Animation
+  const cards = document.querySelectorAll(".testimonial-card");
+
+  window.addEventListener("scroll", () => {
+    const triggerBottom = window.innerHeight * 0.85;
+
+    cards.forEach(card => {
+      const cardTop = card.getBoundingClientRect().top;
+
+      if(cardTop < triggerBottom){
+        card.style.opacity = "1";
+        card.style.transform = "translateY(0)";
+      }
+    });
+  });
+</script>
+<section style="
+background:#0d0d0d;
+padding:110px 8%;
+text-align:center;
+font-family:Georgia, serif;
+color:#EDEDED;
+">
+
+<h2 style="
+color:#D4AF37;
+font-size:2.3rem;
+margin-bottom:70px;
+letter-spacing:1px;
+">
+Operational Excellence in Numbers
+</h2>
+
+<div style="
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:70px;
+">
+
+<div class="counterBox" style="min-width:180px;">
+<h3 class="counter" data-target="120" style="font-size:3rem;color:#D4AF37;">0</h3>
+<p style="color:#CFCFCF;">Global Trade Routes</p>
+</div>
+
+<div class="counterBox" style="min-width:180px;">
+<h3 class="counter" data-target="98" style="font-size:3rem;color:#D4AF37;">0</h3>
+<p style="color:#CFCFCF;">On-Time Delivery %</p>
+</div>
+
+<div class="counterBox" style="min-width:180px;">
+<h3 class="counter" data-target="24" style="font-size:3rem;color:#D4AF37;">0</h3>
+<p style="color:#CFCFCF;">Operational Support Hours</p>
+</div>
+
+<div class="counterBox" style="min-width:180px;">
+<h3 class="counter" data-target="50" style="font-size:3rem;color:#D4AF37;">0</h3>
+<p style="color:#CFCFCF;">Enterprise Clients</p>
+</div>
+<!-- ================= EXPORT SHOWCASE SLIDER ================= -->
+
+<section style="
+  background:#0a0a0f;
+  padding:70px 0;
+  overflow:hidden;
+  position:relative;
+">
+
+  <h2 style="
+    text-align:center;
+    color:#D4AF37;
+    font-size:2rem;
+    margin-bottom:50px;
+    letter-spacing:1px;
+  ">
+    Our client
+  </h2>
+
+  <div class="export-track" style="
+    display:flex;
+    gap:25px;
+    width:max-content;
+    animation:exportSlide 45s linear infinite;
+  ">
+
+    <!-- 10 EXPORT IMAGES -->
+
+    <img src="https://images.unsplash.com/photo-1604908177522-4027f5a5f9a3?q=80&w=600" title="Spices Export" style="height:130px;border-radius:14px;">
+    
+    <img src="https://images.unsplash.com/photo-1567016526105-22da7c3b9e3f?q=80&w=600" title="Furniture Export" style="height:130px;border-radius:14px;">
+
+    <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=600" title="Transport Logistics" style="height:130px;border-radius:14px;">
+
+    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=600" title="Container Shipping" style="height:130px;border-radius:14px;">
+
+    <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=600" title="Agriculture Export" style="height:130px;border-radius:14px;">
+
+    <img src="https://images.unsplash.com/photo-1581093458791-9d42f1f9c8ef?q=80&w=600" title="Industrial Goods" style="height:130px;border-radius:14px;">
+
+    <img src="https://images.unsplash.com/photo-1581092919532-7a3b4e4a7f3a?q=80&w=600" title="Warehousing" style="height:130px;border-radius:14px;">
+
+    <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=600" title="Textile Export" style="height:130px;border-radius:14px;">
+
+    <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=600" title="Machinery Export" style="height:130px;border-radius:14px;">
+
+    <img src="https://images.unsplash.com/photo-1494412685616-a5d310fbb07d?q=80&w=600" title="Global Trade" style="height:130px;border-radius:14px;">
+
+    <!-- Duplicate for seamless loop -->
+
+    <img src="https://images.unsplash.com/photo-1604908177522-4027f5a5f9a3?q=80&w=600" style="height:130px;border-radius:14px;">
+    <img src="https://images.unsplash.com/photo-1567016526105-22da7c3b9e3f?q=80&w=600" style="height:130px;border-radius:14px;">
+    <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=600" style="height:130px;border-radius:14px;">
+    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=600" style="height:130px;border-radius:14px;">
+    <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=600" style="height:130px;border-radius:14px;">
+    <img src="https://images.unsplash.com/photo-1581093458791-9d42f1f9c8ef?q=80&w=600" style="height:130px;border-radius:14px;">
+    <img src="https://images.unsplash.com/photo-1581092919532-7a3b4e4a7f3a?q=80&w=600" style="height:130px;border-radius:14px;">
+    <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=600" style="height:130px;border-radius:14px;">
+    <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=600" style="height:130px;border-radius:14px;">
+    <img src="https://images.unsplash.com/photo-1494412685616-a5d310fbb07d?q=80&w=600" style="height:130px;border-radius:14px;">
+
+  </div>
+
+</section>
+
+<style>
+@keyframes exportSlide{
+  from { transform:translateX(0); }
+  to { transform:translateX(-50%); }
+}
+
+.export-track:hover{
+  animation-play-state:paused;
+}
+
+.export-track img{
+  transition:0.4s;
+  box-shadow:0 10px 25px rgba(0,0,0,0.6);
+}
+
+.export-track img:hover{
+  transform:scale(1.12);
+  box-shadow:0 20px 50px rgba(212,175,55,0.4);
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .export-track img{
+    height:90px !important;
+  }
+}
+</style>
+<footer style="background:#000; color:#fff; font-family:'Playfair Display', serif; padding:80px 20px 30px 20px; position:relative; overflow:hidden;">
+
+  <!-- Top Divider Glow -->
+  <div style="height:2px; width:100%; background:linear-gradient(90deg, transparent, #c9a227, transparent); margin-bottom:60px;"></div>
+
+  <div style="max-width:1200px; margin:auto; display:flex; flex-wrap:wrap; justify-content:space-between; gap:40px;">
+
+    <!-- Brand Section -->
+    <div style="flex:1; min-width:250px;">
+      <h2 style="font-size:28px; letter-spacing:2px; color:#c9a227;">
+        ELEPHANT ROYAL
+      </h2>
+      <p style="color:#aaa; margin-top:15px; line-height:1.8;">
+        Strength. Wisdom. Elegance.  
+        Inspired by the majestic spirit of the elephant, we craft timeless digital experiences with classic luxury aesthetics.
+      </p>
+
+      <!-- Social Media -->
+      <div style="margin-top:25px; display:flex; gap:15px; flex-wrap:wrap;">
+        <a href="#" class="social-icon">Instagram</a>
+        <a href="#" class="social-icon">Facebook</a>
+        <a href="#" class="social-icon">Twitter</a>
+        <a href="mailto:info@elephantroyal.com" class="social-icon">Email</a>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div style="flex:1; min-width:200px;">
+      <h3 style="color:#c9a227; margin-bottom:20px;">Quick Links</h3>
+      <ul style="list-style:none; padding:0; color:#aaa; line-height:2;">
+        <li><a href="#" style="color:#aaa; text-decoration:none; transition:0.3s;">Home</a></li>
+        <li><a href="#" style="color:#aaa; text-decoration:none; transition:0.3s;">About</a></li>
+        <li><a href="#" style="color:#aaa; text-decoration:none; transition:0.3s;">Gallery</a></li>
+        <li><a href="#" style="color:#aaa; text-decoration:none; transition:0.3s;">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div style="flex:1; min-width:200px;">
+      <h3 style="color:#c9a227; margin-bottom:20px;">Contact</h3>
+      <p style="color:#aaa; line-height:1.8;">
+        📍 Bangalore, India<br>
+        📞 +91 98765 43210<br>
+        ✉ info@elephantroyal.com
+      </p>
+    </div>
+
+    <!-- Newsletter -->
+    <div style="flex:1; min-width:250px;">
+      <h3 style="color:#c9a227; margin-bottom:20px;">Subscribe</h3>
+      <p style="color:#aaa; margin-bottom:15px;">
+        Join our royal community.
+      </p>
+      <input type="email" placeholder="Enter your email"
+        style="width:100%; padding:12px; border:none; outline:none; border-radius:5px; margin-bottom:10px;">
+      <button style="width:100%; padding:12px; background:#c9a227; border:none; color:black; font-weight:bold; border-radius:5px; cursor:pointer; transition:0.3s;">
+        Subscribe
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Bottom Section -->
+  <div style="margin-top:60px; text-align:center; border-top:1px solid rgba(255,255,255,0.1); padding-top:20px; color:#777;">
+    © 2026 Elephant Royal. All Rights Reserved.
+  </div>
+
+</footer>
+
+<style>
+  .social-icon{
+    text-decoration:none;
+    color:#aaa;
+    border:1px solid rgba(201,162,39,0.4);
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:14px;
+    transition:0.3s ease;
+  }
+  .social-icon:hover{
+    color:#000;
+    background:#c9a227;
+    box-shadow:0 0 15px #c9a227;
+  }
+</style>
+
+<script>
+  const footerLinks = document.querySelectorAll("footer a");
+  footerLinks.forEach(link => {
+    link.addEventListener("mouseenter", () => {
+      link.style.paddingLeft = "5px";
+    });
+    link.addEventListener("mouseleave", () => {
+      link.style.paddingLeft = "0px";
+    });
+  });
+
+  const btn = document.querySelector("footer button");
+  if(btn){
+    btn.addEventListener("mouseenter", () => {
+      btn.style.background = "#fff";
+    });
+    btn.addEventListener("mouseleave", () => {
+      btn.style.background = "#c9a227";
+    });
+  }
+</script>
+
+</div>
+
+</section>
+
+<script>
+/* Animated Counter */
+const counters = document.querySelectorAll('.counter');
+const speed = 200;
+
+const animateCounters = () => {
+    counters.forEach(counter => {
+        const updateCount = () => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+            const increment = target / speed;
+
+            if(count < target){
+                counter.innerText = Math.ceil(count + increment);
+                setTimeout(updateCount, 20);
+            } else {
+                counter.innerText = target;
+            }
+        };
+        updateCount();
+    });
+};
+
+/* Trigger when section visible */
+let triggered = false;
+window.addEventListener('scroll', ()=>{
+    const section = document.querySelector('.counterBox');
+    if(!section) return;
+    const position = section.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.3;
+
+    if(position < screenPosition && !triggered){
+        animateCounters();
+        triggered = true;
+    }
+});
+</script>
+
+</div>
+
+<script>
+/* ===============================
+   MOBILE NAV TOGGLE
+================================ */
+
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+
+if(hamburger && navLinks){
+  hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      navLinks.classList.toggle("active");
+  });
+
+  /* Close menu on link click (mobile UX) */
+  document.querySelectorAll(".nav-links a").forEach(link=>{
+      link.addEventListener("click", ()=>{
+          navLinks.classList.remove("active");
+          hamburger.classList.remove("active");
+      });
+  });
+}
+</script>
+
+</body>
+</html>
+>>>>>>> c7e7fe9 (fix(index.html): add defensive checks to scripts and remove stray markup; improve mobile nav)

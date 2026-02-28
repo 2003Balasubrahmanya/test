@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terraflux Logistics</title>
+
+<style>
+:root{
+  --black:#0b0b0f;
+  --gold:#D4AF37;
+  --glass:rgba(255,255,255,0.05);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family: 'Segoe UI', sans-serif;
+  background:var(--black);
+  color:#eee;
+  overflow-x:hidden;
+}
+
+/* ===== NAVBAR ===== */
+header{
+  position:fixed;
+  width:100%;
+  background:rgba(0,0,0,0.8);
+  backdrop-filter:blur(10px);
+  padding:18px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:1000;
+}
+
+.logo{
+  color:var(--gold);
+  font-weight:bold;
+  letter-spacing:2px;
+}
+
+#navLinks{
+  display:flex;
+  gap:35px;
+}
+
+#navLinks a{
+  color:#ccc;
+  text-decoration:none;
+  transition:.3s;
+}
+
+#navLinks a:hover{
+  color:var(--gold);
+}
+
+#hamburger{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
+}
+
+#hamburger span{
+  width:25px;
+  height:3px;
+  background:var(--gold);
+}
+
+/* ===== HERO ===== */
+.hero{
+  height:100vh;
+  background:url("https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=2070") center/cover fixed;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to bottom, rgba(0,0,0,.8), rgba(0,0,0,.9));
+}
+
+.hero-content{
+  position:relative;
+  max-width:900px;
+  animation:fadeUp 1.5s ease;
+}
+
+.hero h1{
+  font-size:3.5rem;
+  color:var(--gold);
+  margin-bottom:20px;
+}
+
+.hero p{
+  font-size:1.2rem;
+  line-height:1.8;
+  color:#ddd;
+}
+
+/* ===== SECTION ===== */
+.section{
+  padding:120px 8%;
+}
+
+.section-title{
+  font-size:2.5rem;
+  color:var(--gold);
+  margin-bottom:25px;
+}
+
+.section-sub{
+  max-width:800px;
+  line-height:1.8;
+  color:#bbb;
+  margin-bottom:60px;
+}
+
+/* ===== GLASS CARDS ===== */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:40px;
+}
+
+.card{
+  background:var(--glass);
+  backdrop-filter:blur(15px);
+  padding:40px;
+  border-radius:20px;
+  border:1px solid rgba(212,175,55,.3);
+  transition:.4s;
+  transform:translateY(60px);
+  opacity:0;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 20px 60px rgba(212,175,55,.2);
+}
+
+.card h3{
+  color:var(--gold);
+  margin-bottom:15px;
+}
+
+.card p{
+  color:#ccc;
+  line-height:1.7;
+}
+
+/* ===== IMAGE SPLIT ===== */
+.split{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:60px;
+}
+
+.split img{
+  width:100%;
+  max-width:550px;
+  border-radius:20px;
+  box-shadow:0 30px 60px rgba(0,0,0,.6);
+  transform:translateY(60px);
+  opacity:0;
+  transition:1s;
+}
+
+.split-text{
+  flex:1;
+  min-width:300px;
+  transform:translateY(60px);
+  opacity:0;
+  transition:1s;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:#000;
+  padding:80px 8%;
+  text-align:center;
+  border-top:1px solid rgba(212,175,55,.3);
+}
+
+footer h3{color:var(--gold);}
+footer p{color:#777;margin-top:10px;}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(60px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+  #navLinks{
+    position:fixed;
+    top:70px;
+    right:-100%;
+    width:250px;
+    height:100vh;
+    background:#000;
+    flex-direction:column;
+    padding:40px 20px;
+    transition:.4s;
+  }
+  #hamburger{display:flex;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">TERRAFLUX</div>
+
+  <div id="navLinks">
+    <a href="#">Home</a>
+    <a href="#" style="color:#D4AF37;">Logistics</a>
+    <a href="#">Warehousing</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <div id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Next-Generation Logistics</h1>
+    <p>
+      Intelligent freight networks engineered with precision routing,
+      real-time tracking, and enterprise-grade scalability.
+    </p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section">
+  <h2 class="section-title">Freight Architecture</h2>
+  <p class="section-sub">
+    Terraflux integrates air, sea, and land freight systems
+    into a unified global distribution ecosystem.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Air Freight</h3>
+      <p>Priority cargo with optimized time-sensitive routing.</p>
+    </div>
+    <div class="card">
+      <h3>Ocean Freight</h3>
+      <p>Containerized global shipping with strategic port alliances.</p>
+    </div>
+    <div class="card">
+      <h3>Road Transport</h3>
+      <p>Smart fleet management & domestic distribution control.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SPLIT SECTION -->
+<section class="section">
+  <div class="split">
+    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070">
+    <div class="split-text">
+      <h2 class="section-title">AI Logistics Intelligence</h2>
+      <p class="section-sub">
+        Our predictive analytics and automation frameworks reduce
+        transit time, minimize risk, and optimize warehousing flows.
+      </p>
+    </div>
+  </div>
+</section>
+<!-- ================= CRAZY PREMIUM BODY SECTION ================= -->
+
+<section style="padding:120px 8%; background:#0b0b0f; position:relative; overflow:hidden;">
+
+  <!-- Decorative Glow Background -->
+  <div style="
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:radial-gradient(circle,#D4AF3730,transparent 70%);
+    top:-150px;
+    left:-150px;
+    filter:blur(80px);
+  "></div>
+
+  <h2 class="crazy-title" style="
+    text-align:center;
+    font-size:3rem;
+    color:#D4AF37;
+    margin-bottom:20px;
+    opacity:0;
+    transform:translateY(60px);
+    transition:1s;
+  ">
+    Precision. Power. Performance.
+  </h2>
+
+  <p class="crazy-sub" style="
+    text-align:center;
+    max-width:800px;
+    margin:0 auto 80px auto;
+    color:#bbb;
+    font-size:1.1rem;
+    line-height:1.8;
+    opacity:0;
+    transform:translateY(60px);
+    transition:1s;
+  ">
+    Terraflux transforms global logistics through intelligent routing,
+    AI-powered warehousing systems, and enterprise-grade freight architecture.
+  </p>
+
+  <!-- CARD GRID -->
+  <div style="
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:40px;
+  ">
+
+    <!-- CARD 1 -->
+    <div class="crazy-card" style="
+      background:rgba(255,255,255,0.05);
+      backdrop-filter:blur(15px);
+      border:1px solid rgba(212,175,55,0.3);
+      border-radius:20px;
+      overflow:hidden;
+      transition:.5s;
+      opacity:0;
+      transform:translateY(60px);
+    ">
+      <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070" 
+           style="width:100%; height:220px; object-fit:cover;">
+      <div style="padding:30px;">
+        <h3 style="color:#D4AF37; margin-bottom:15px;">Air Freight Network</h3>
+        <p style="color:#ccc; line-height:1.7;">
+          Ultra-fast cargo mobility optimized with predictive route intelligence.
+        </p>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="crazy-card" style="
+      background:rgba(255,255,255,0.05);
+      backdrop-filter:blur(15px);
+      border:1px solid rgba(212,175,55,0.3);
+      border-radius:20px;
+      overflow:hidden;
+      transition:.5s;
+      opacity:0;
+      transform:translateY(60px);
+    ">
+      <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=2070"
+           style="width:100%; height:220px; object-fit:cover;">
+      <div style="padding:30px;">
+        <h3 style="color:#D4AF37; margin-bottom:15px;">Ocean Freight Systems</h3>
+        <p style="color:#ccc; line-height:1.7;">
+          Strategic port partnerships delivering scalable container solutions.
+        </p>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="crazy-card" style="
+      background:rgba(255,255,255,0.05);
+      backdrop-filter:blur(15px);
+      border:1px solid rgba(212,175,55,0.3);
+      border-radius:20px;
+      overflow:hidden;
+      transition:.5s;
+      opacity:0;
+      transform:translateY(60px);
+    ">
+      <img src="https://images.unsplash.com/photo-1581093458791-9d42f1f9c8ef?q=80&w=2070"
+           style="width:100%; height:220px; object-fit:cover;">
+      <div style="padding:30px;">
+        <h3 style="color:#D4AF37; margin-bottom:15px;">AI Warehouse Automation</h3>
+        <p style="color:#ccc; line-height:1.7;">
+          Smart inventory tracking, robotics integration, and optimized storage flow.
+        </p>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="crazy-card" style="
+      background:rgba(255,255,255,0.05);
+      backdrop-filter:blur(15px);
+      border:1px solid rgba(212,175,55,0.3);
+      border-radius:20px;
+      overflow:hidden;
+      transition:.5s;
+      opacity:0;
+      transform:translateY(60px);
+    ">
+      <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=2070"
+           style="width:100%; height:220px; object-fit:cover;">
+      <div style="padding:30px;">
+        <h3 style="color:#D4AF37; margin-bottom:15px;">Global Distribution Grid</h3>
+        <p style="color:#ccc; line-height:1.7;">
+          Seamless cross-border trade connectivity with full compliance integration.
+        </p>
+      </div>
+    </div>
+ <div class="crazy-card" style="
+      background:rgba(255,255,255,0.05);
+      backdrop-filter:blur(15px);
+      border:1px solid rgba(212,175,55,0.3);
+      border-radius:20px;
+      overflow:hidden;
+      transition:.5s;
+      opacity:0;
+      transform:translateY(60px);
+    ">
+      <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=2070"
+           style="width:100%; height:220px; object-fit:cover;">
+      <div style="padding:30px;">
+        <h3 style="color:#D4AF37; margin-bottom:15px;">Global Distribution Grid</h3>
+        <p style="color:#ccc; line-height:1.7;">
+          Seamless cross-border trade connectivity with full compliance integration.
+        </p>
+      </div>
+    </div>
+     <div class="crazy-card" style="
+      background:rgba(255,255,255,0.05);
+      backdrop-filter:blur(15px);
+      border:1px solid rgba(212,175,55,0.3);
+      border-radius:20px;
+      overflow:hidden;
+      transition:.5s;
+      opacity:0;
+      transform:translateY(60px);
+    ">
+      <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=2070"
+           style="width:100%; height:220px; object-fit:cover;">
+      <div style="padding:30px;">
+        <h3 style="color:#D4AF37; margin-bottom:15px;">Global Distribution Grid</h3>
+        <p style="color:#ccc; line-height:1.7;">
+          Seamless cross-border trade connectivity with full compliance integration.
+        </p>
+      </div>
+    </div>
+  </div>
+
+</section>
+<!-- ================= SLIDING IMAGE WINDOW ================= -->
+
+<section style="
+  background:#0b0b0f;
+  padding:60px 0;
+  overflow:hidden;
+  position:relative;
+">
+
+  <h2 style="
+    text-align:center;
+    color:#D4AF37;
+    margin-bottom:40px;
+    font-size:2rem;
+  ">
+    Global Operations Showcase
+  </h2>
+
+  <div class="slider-track" style="
+    display:flex;
+    gap:30px;
+    width:max-content;
+    animation:slideLeft 40s linear infinite;
+  ">
+
+    <!-- 10 SMALL IMAGES -->
+    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=600" style="height:140px;border-radius:15px;">
+    <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=600" style="height:140px;border-radius:15px;">
+    <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=600" style="height:140px;border-radius:15px;">
+    <img src="https://images.unsplash.com/photo-1581093458791-9d42f1f9c8ef?q=80&w=600" style="height:140px;border-radius:15px;">
+    <img src="https://images.unsplash.com/photo-1590496794008-383c8070b257?q=80&w=600" style="height:140px;border-radius:15px;">
+    <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=600" style="height:140px;border-radius:15px;">
+    <img src="https://images.unsplash.com/photo-1494412685616-a5d310fbb07d?q=80&w=600" style="height:140px;border-radius:15px;">
+    <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?q=80&w=600" style="height:140px;border-radius:15px;">
+    <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=600" style="height:140px;border-radius:15px;">
+    <img src="https://images.unsplash.com/photo-1532614338840-ab30cf10ed36?q=80&w=600" style="height:140px;border-radius:15px;">
+
+    <!-- Duplicate for seamless loop -->
+    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=600" style="height:140px;border-radius:15px;">
+    <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=600" style="height:140px;border-radius:15px;">
+    <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=600" style="height:140px;border-radius:15px;">
+    <img src="https://images.unsplash.com/photo-1581093458791-9d42f1f9c8ef?q=80&w=600" style="height:140px;border-radius:15px;">
+    <img src="https://images.unsplash.com/photo-1590496794008-383c8070b257?q=80&w=600" style="height:140px;border-radius:15px;">
+    <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=600" style="height:140px;border-radius:15px;">
+    <img src="https://images.unsplash.com/photo-1494412685616-a5d310fbb07d?q=80&w=600" style="height:140px;border-radius:15px;">
+    <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?q=80&w=600" style="height:140px;border-radius:15px;">
+    <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=600" style="height:140px;border-radius:15px;">
+    <img src="https://images.unsplash.com/photo-1532614338840-ab30cf10ed36?q=80&w=600" style="height:140px;border-radius:15px;">
+
+  </div>
+
+</section>
+
+<style>
+@keyframes slideLeft{
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Hover Pause */
+.slider-track:hover{
+  animation-play-state: paused;
+}
+
+/* Image Styling */
+.slider-track img{
+  transition:0.4s;
+  box-shadow:0 10px 25px rgba(0,0,0,0.6);
+}
+
+.slider-track img:hover{
+  transform:scale(1.1);
+  box-shadow:0 15px 40px rgba(212,175,55,0.4);
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .slider-track img{
+    height:100px !important;
+  }
+}
+</style>
+<script>
+/* SCROLL REVEAL ANIMATION */
+const crazyElements = document.querySelectorAll('.crazy-title, .crazy-sub, .crazy-card');
+
+const crazyObserver = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.style.opacity="1";
+      entry.target.style.transform="translateY(0)";
+    }
+  });
+},{threshold:0.2});
+
+crazyElements.forEach(el=>crazyObserver.observe(el));
+
+/* HOVER 3D EFFECT */
+document.querySelectorAll('.crazy-card').forEach(card=>{
+  card.addEventListener('mouseenter',()=>{
+    card.style.transform="translateY(-15px) scale(1.03)";
+    card.style.boxShadow="0 30px 60px rgba(212,175,55,0.25)";
+  });
+  card.addEventListener('mouseleave',()=>{
+    card.style.transform="translateY(0) scale(1)";
+    card.style.boxShadow="none";
+  });
+});
+</script>
+<!-- ================= FOOTER ================= -->
+
+<footer style="background:#000;color:#fff;font-family:Georgia,serif;padding:80px 8% 30px;margin-top:100px;">
+
+  <div style="height:2px;background:linear-gradient(90deg,transparent,#D4AF37,transparent);margin-bottom:60px;"></div>
+
+  <div style="max-width:1200px;margin:auto;display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between;">
+
+    <!-- Brand -->
+    <div style="flex:1;min-width:220px;">
+      <h2 style="color:#D4AF37;letter-spacing:2px;">TERRAFLUX</h2>
+      <p style="color:#aaa;line-height:1.8;margin-top:15px;">
+        Global logistics infrastructure engineered for precision,
+        resilience, and enterprise scalability.
+      </p>
+    </div>
+
+    <!-- Links -->
+    <div style="flex:1;min-width:200px;">
+      <h3 style="color:#D4AF37;margin-bottom:20px;">Quick Links</h3>
+      <p><a href="index.html" style="color:#aaa;text-decoration:none;">Home</a></p>
+      <p><a href="logistics.html" style="color:#aaa;text-decoration:none;">Logistics</a></p>
+      <p><a href="warehousing.html" style="color:#aaa;text-decoration:none;">Warehousing</a></p>
+      <p><a href="about.html" style="color:#aaa;text-decoration:none;">About</a></p>
+      <p><a href="contact.html" style="color:#aaa;text-decoration:none;">Contact</a></p>
+    </div>
+
+    <!-- Contact -->
+    <div style="flex:1;min-width:200px;">
+      <h3 style="color:#D4AF37;margin-bottom:20px;">Contact</h3>
+      <p style="color:#aaa;line-height:1.8;">
+        📍 Bangalore, India<br>
+        📞 +91 98765 43210<br>
+        ✉ info@terraflux.com
+      </p>
+    </div>
+
+  </div>
+
+  <div style="margin-top:60px;text-align:center;border-top:1px solid rgba(255,255,255,0.1);padding-top:20px;color:#777;">
+    © 2026 Terraflux. All Rights Reserved.
+  </div>
+
+</footer>
+
+<script>
+function toggleMenu(){
+  const nav=document.getElementById("navLinks");
+  nav.style.right=(nav.style.right==="0px")?"-100%":"0";
+}
+
+/* Scroll Reveal */
+const reveal=document.querySelectorAll(".card, .split img, .split-text");
+
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.style.opacity="1";
+      e.target.style.transform="translateY(0)";
+    }
+  });
+},{threshold:.2});
+
+reveal.forEach(el=>obs.observe(el));
+</script>
+
+</body>
+</html>

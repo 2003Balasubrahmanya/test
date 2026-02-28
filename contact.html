@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TERRAFLUX GLOBAL - Contact</title>
+
+<style>
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:#000;
+color:#fff;
+}
+
+/* ================= HEADER ================= */
+header{
+position:sticky;
+top:0;
+z-index:1000;
+background:#000;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.logo{
+color:#D4AF37;
+font-size:20px;
+font-weight:600;
+letter-spacing:1px;
+}
+
+nav{
+display:flex;
+gap:30px;
+transition:0.4s ease;
+}
+
+nav a{
+color:#ccc;
+text-decoration:none;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#D4AF37;
+}
+
+#menuToggle{
+display:none;
+flex-direction:column;
+gap:5px;
+cursor:pointer;
+}
+
+#menuToggle span{
+width:26px;
+height:3px;
+background:#D4AF37;
+}
+
+/* ================= CONTACT SECTION ================= */
+.contact-section{
+min-height:100vh;
+padding:100px 8%;
+overflow:hidden;
+}
+
+.title{
+text-align:center;
+margin-bottom:70px;
+}
+
+.title h1{
+font-size:42px;
+color:#D4AF37;
+letter-spacing:2px;
+}
+
+.contact-wrapper{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+gap:50px;
+}
+
+.contact-box{
+background:rgba(255,255,255,0.05);
+padding:35px;
+border-radius:15px;
+backdrop-filter:blur(12px);
+box-shadow:0 25px 70px rgba(0,0,0,0.7);
+opacity:0;
+transition:all 1.2s ease;
+}
+
+/* Slide directions */
+.left-box{ transform:translateX(-120px); }
+.right-box{ transform:translateX(120px); }
+
+.contact-box.show{
+opacity:1;
+transform:translateX(0);
+}
+
+/* Form */
+form input,
+form textarea{
+width:100%;
+padding:14px;
+margin-bottom:15px;
+background:#111;
+border:none;
+border-radius:8px;
+color:#fff;
+}
+
+form button{
+width:100%;
+padding:14px;
+background:#D4AF37;
+border:none;
+border-radius:8px;
+font-weight:600;
+cursor:pointer;
+transition:0.4s;
+}
+
+form button:hover{
+background:#fff;
+color:#000;
+}
+
+/* Social Buttons */
+.social-buttons{
+margin-top:25px;
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.social-buttons a{
+padding:8px 16px;
+border:1px solid #D4AF37;
+border-radius:20px;
+color:#D4AF37;
+text-decoration:none;
+transition:0.3s;
+}
+
+.social-buttons a:hover{
+background:#D4AF37;
+color:#000;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:900px){
+
+nav{
+position:absolute;
+top:70px;
+right:8%;
+background:#111;
+flex-direction:column;
+width:220px;
+padding:25px;
+border-radius:8px;
+gap:20px;
+display:none;
+box-shadow:0 15px 40px rgba(0,0,0,0.6);
+}
+
+#menuToggle{
+display:flex;
+}
+
+.contact-wrapper{
+gap:30px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+<div class="logo">TERRAFLUX GLOBAL</div>
+
+<nav id="navMenu">
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Services</a>
+<a href="#">Portfolio</a>
+<a href="#">Contact</a>
+</nav>
+
+<div id="menuToggle">
+<span></span>
+<span></span>
+<span></span>
+</div>
+</header>
+
+<!-- ================= CONTACT SECTION ================= -->
+<section class="contact-section">
+
+<div class="title">
+<h1>Contact Us</h1>
+<p style="color:#aaa;">Let’s Build Something Extraordinary</p>
+</div>
+
+<div class="contact-wrapper">
+
+<!-- LEFT FRAME -->
+<div class="contact-box left-box">
+
+<h2 style="color:#D4AF37;">Registered Office</h2>
+
+<p style="line-height:1.8;color:#ccc;">
+#22/23, 2nd Floor, TR Plaza Double Road<br>
+Above Lenskart, Rajarajeshwari Nagar<br>
+Bengaluru – 560098, India
+</p>
+
+<hr style="margin:25px 0;border:0;border-top:1px solid rgba(255,255,255,0.1);">
+
+<h3 style="color:#D4AF37;">Contact</h3>
+<p>📞 <a href="tel:+919663938889" style="color:#ccc;text-decoration:none;">+91 96639 38889</a></p>
+<p>✉ <a href="mailto:ContactUs@terrafluxgv.com" style="color:#ccc;text-decoration:none;">ContactUs@terrafluxgv.com</a></p>
+<p>🌐 <a href="https://www.terrafluxgv.com" target="_blank" style="color:#ccc;text-decoration:none;">www.terrafluxgv.com</a></p>
+
+<div class="social-buttons">
+<a href="https://facebook.com" target="_blank">Facebook</a>
+<a href="https://instagram.com" target="_blank">Instagram</a>
+<a href="https://linkedin.com" target="_blank">LinkedIn</a>
+<a href="https://twitter.com" target="_blank">Twitter</a>
+</div>
+
+</div>
+
+<!-- RIGHT FRAME -->
+<div class="contact-box right-box">
+
+<h2 style="color:#D4AF37;">Find Us On Map</h2>
+
+<iframe
+src="https://www.google.com/maps?q=Rajarajeshwari%20Nagar%20Bengaluru&output=embed"
+width="100%"
+height="300"
+style="border:0;border-radius:12px;margin-bottom:25px;"
+allowfullscreen=""
+loading="lazy">
+</iframe>
+
+<h3 style="color:#D4AF37;">Send Message</h3>
+
+<form>
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea rows="4" placeholder="Your Message" required></textarea>
+<button type="submit">Send Message</button>
+</form>
+
+</div>
+
+</div>
+</section>
+
+<!-- ================= SCRIPTS ================= -->
+<script>
+
+// Mobile Toggle
+const menuToggle=document.getElementById("menuToggle");
+const navMenu=document.getElementById("navMenu");
+
+menuToggle.addEventListener("click",()=>{
+navMenu.style.display = navMenu.style.display==="flex" ? "none" : "flex";
+});
+
+// Scroll Animation
+const boxes=document.querySelectorAll(".contact-box");
+
+function revealBoxes(){
+const trigger=window.innerHeight*0.85;
+boxes.forEach(box=>{
+const top=box.getBoundingClientRect().top;
+if(top<trigger){
+box.classList.add("show");
+}
+});
+}
+
+window.addEventListener("scroll",revealBoxes);
+window.addEventListener("load",revealBoxes);
+
+</script>
+
+</body>
+</html>

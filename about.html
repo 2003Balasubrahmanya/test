@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | Terraflux Global Ventures</title>
+
+<style>
+:root{
+  --black:#0D0D0D;
+  --gold:#D4AF37;
+  --text:#EDEDED;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Georgia, "Times New Roman", serif;
+  background:var(--black);
+  color:var(--text);
+}
+
+/* NAVBAR */
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:rgba(13,13,13,0.95);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(212,175,55,0.3);
+  z-index:1000;
+}
+
+.navbar{
+  max-width:1300px;
+  margin:auto;
+  padding:18px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  color:var(--gold);
+  letter-spacing:2px;
+  font-weight:bold;
+}
+
+.nav-links{
+  display:flex;
+  gap:35px;
+}
+
+nav a{
+  color:var(--text);
+  text-decoration:none;
+  font-size:0.95rem;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:var(--gold);
+}
+
+/* HERO */
+.hero{
+  position:relative;
+  height:65vh;
+  background:url('https://images.unsplash.com/photo-1581091870621-3dbb32ef8c51?q=80&w=2070')center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:0 20px;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.65);
+}
+
+.hero h1{
+  position:relative;
+  color:var(--gold);
+  font-size:3rem;
+  letter-spacing:1px;
+  margin-bottom:15px;
+}
+
+.hero p{
+  position:relative;
+  color:#E0E0E0;
+  max-width:800px;
+  font-size:1.1rem;
+  line-height:1.7;
+}
+
+/* SECTIONS */
+.section{
+  padding:90px 8%;
+}
+
+.title{
+  color:var(--gold);
+  font-size:2.4rem;
+  margin-bottom:25px;
+  opacity:0;
+  transform:translateY(50px);
+  transition:1s ease;
+}
+
+.subtitle{
+  max-width:900px;
+  color:#CFCFCF;
+  font-size:1.05rem;
+  line-height:1.7;
+  opacity:0;
+  transform:translateY(50px);
+  transition:1s ease;
+}
+
+img.responsive-img{
+  width:100%;
+  border-radius:14px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.6);
+  margin-top:30px;
+  opacity:0;
+  transform:translateY(50px);
+  transition:1s ease;
+}
+
+/* VALUES */
+.values{
+  background:#111;
+  padding:80px 8%;
+  border-top:1px solid rgba(212,175,55,0.2);
+  border-bottom:1px solid rgba(212,175,55,0.2);
+}
+
+/* CONTACT */
+.contact-box{
+  margin-top:40px;
+  padding:40px;
+  background:#151515;
+  border-radius:14px;
+  border:1px solid rgba(212,175,55,0.25);
+  line-height:1.8;
+  opacity:0;
+  transform:translateY(50px);
+  transition:1s ease;
+}
+
+/* FOOTER */
+footer{
+  background:#000;
+  padding:60px 8%;
+  text-align:center;
+  border-top:1px solid rgba(212,175,55,0.2);
+}
+
+footer p{
+  color:#777;
+  margin-top:15px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav-links{display:none;}
+  .hero h1{font-size:2.2rem;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header style="position:fixed;top:0;width:100%;z-index:1000;background:rgba(13,13,13,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(212,175,55,0.3);font-family:Georgia,serif;">
+
+  <div style="max-width:1400px;margin:auto;padding:18px 8%;display:flex;justify-content:space-between;align-items:center;">
+
+    <div style="color:#D4AF37;font-size:1.2rem;letter-spacing:2px;font-weight:600;">
+      TERRAFLUX
+    </div>
+
+  
+
+    <header style="background:#0E1117; padding:15px 20px; position:relative;">
+
+  <!-- Top Bar -->
+  <div style="display:flex; justify-content:space-between; align-items:center; color:white;">
+    
+    <div style="font-weight:bold; font-size:18px; color:#D4AF37;">
+      TERRAFLUX
+    </div>
+
+    <!-- Hamburger -->
+    <div onclick="toggleMenu()" style="cursor:pointer; font-size:26px;">
+      ☰
+    </div>
+
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" 
+       style="display:none; flex-direction:column; margin-top:15px;">
+
+    <a href="#" style="color:white; text-decoration:none; padding:10px 0;">Home</a>
+    <a href="#" style="color:white; text-decoration:none; padding:10px 0;">Logistics</a>
+    <a href="#" style="color:white; text-decoration:none; padding:10px 0;">Warehousing</a>
+    <a href="#" style="color:white; text-decoration:none; padding:10px 0;">About</a>
+    <a href="#" style="color:white; text-decoration:none; padding:10px 0;">Contact</a>
+
+  </div>
+
+</header>
+
+<script>
+function toggleMenu(){
+  var menu = document.getElementById("mobileMenu");
+  if(menu.style.display === "flex"){
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "flex";
+  }
+}
+</script>
+
+  </div>
+
+</header>
+<script>
+function toggleMenu(){
+  const nav = document.getElementById("navLinks");
+  const hamburger = document.getElementById("hamburger");
+
+  if(window.innerWidth <= 768){
+    if(nav.style.position !== "fixed"){
+      nav.style.position = "fixed";
+      nav.style.top = "70px";
+      nav.style.right = "-100%";
+      nav.style.width = "260px";
+      nav.style.height = "calc(100vh - 70px)";
+      nav.style.background = "#080808";
+      nav.style.flexDirection = "column";
+      nav.style.padding = "40px 25px";
+      nav.style.gap = "25px";
+      nav.style.transition = "0.4s ease";
+    }
+
+    if(nav.style.right === "0px"){
+      nav.style.right = "-100%";
+      document.body.style.overflow = "auto";
+    } else {
+      nav.style.right = "0";
+      document.body.style.overflow = "hidden";
+    }
+  }
+}
+
+/* Show hamburger on mobile */
+function handleResize(){
+  const hamburger = document.getElementById("hamburger");
+  const nav = document.getElementById("navLinks");
+
+  if(window.innerWidth <= 768){
+    hamburger.style.display = "flex";
+    nav.style.display = "flex";
+  } else {
+    hamburger.style.display = "none";
+    nav.style.position = "static";
+    nav.style.flexDirection = "row";
+    nav.style.height = "auto";
+    nav.style.right = "0";
+    document.body.style.overflow = "auto";
+  }
+}
+
+window.addEventListener("resize", handleResize);
+window.addEventListener("load", handleResize);
+</script>
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>About Terraflux Global Ventures</h1>
+    <p>Empowering global enterprises with resilient, intelligent logistics and scalable infrastructure solutions in a connected world.</p>
+  </div>
+</section>
+
+<!-- MISSION & STORY -->
+<section class="section">
+  <h2 class="title">Our Story</h2>
+  <p class="subtitle">
+    Terraflux Global Ventures began with a single vision — to build a logistics powerhouse that
+    seamlessly integrates data intelligence with real-world execution.
+  </p>
+
+  <img src="https://images.unsplash.com/photo-1509223197845-458d87318791?q=80&w=2070" class="responsive-img">
+</section>
+
+<section class="section">
+  <h2 class="title">What We Do</h2>
+  <p class="subtitle">
+    We architect freight networks, optimize warehousing flows, and engineer distribution systems designed to drive enterprise efficiency and global scale.
+  </p>
+
+  <img src="https://images.unsplash.com/photo-1590935212790-3dbd08152852?q=80&w=2070" class="responsive-img">
+</section>
+
+<!-- CORE VALUES -->
+<section class="values">
+  <h2 class="title">Our Philosophy</h2>
+  <p class="subtitle">
+    Customer-Focused Service. Integrity. Accessibility. Strategic innovation anchored in global logistics mastery.
+  </p>
+
+  <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=2070" class="responsive-img">
+</section>
+<!-- ===== START COMPANY JOURNEY / CARD STYLE SECTION ===== -->
+<section style="padding:80px 20px; background:#000; color:#FFD700; font-family:'Georgia', serif; text-align:center;">
+    <h2 style="margin-bottom:50px; font-size:36px;">Our Journey</h2>
+
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px; max-width:1000px; margin:0 auto;">
+
+        <!-- Card 1 -->
+        <div class="journey-card" style="background:#111; padding:30px; border-radius:15px; width:280px; box-shadow:0 8px 20px rgba(255,215,0,0.3); opacity:0; transform:translateY(50px); transition:0.8s;">
+            <h3 style="margin-bottom:15px;">2015</h3>
+            <p>Terraflux Global Ventures was founded with a vision to simplify global trade.</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="journey-card" style="background:#111; padding:30px; border-radius:15px; width:280px; box-shadow:0 8px 20px rgba(255,215,0,0.3); opacity:0; transform:translateY(50px); transition:0.8s;">
+            <h3 style="margin-bottom:15px;">2017</h3>
+            <p>Expanded import-export operations to include premium spices and dry fruits.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="journey-card" style="background:#111; padding:30px; border-radius:15px; width:280px; box-shadow:0 8px 20px rgba(255,215,0,0.3); opacity:0; transform:translateY(50px); transition:0.8s;">
+            <h3 style="margin-bottom:15px;">2020</h3>
+            <p>Launched global logistics network with clients across 5 continents.</p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="journey-card" style="background:#111; padding:30px; border-radius:15px; width:280px; box-shadow:0 8px 20px rgba(255,215,0,0.3); opacity:0; transform:translateY(50px); transition:0.8s;">
+            <h3 style="margin-bottom:15px;">2023</h3>
+            <p>Surpassed 950K+ deliveries and 100K+ client feedback globally.</p>
+        </div>
+
+    </div>
+</section>
+<!-- ===== END COMPANY JOURNEY / CARD STYLE SECTION ===== -->
+
+<script>
+function revealCards(){
+    var cards = document.querySelectorAll('.journey-card');
+    var windowHeight = window.innerHeight;
+
+    cards.forEach(function(card, index){
+        var top = card.getBoundingClientRect().top;
+        if(top < windowHeight - 50){
+            setTimeout(function(){
+                card.style.opacity = 1;
+                card.style.transform = "translateY(0)";
+            }, index * 200); // stagger animation
+        }
+    });
+}
+
+window.addEventListener('scroll', revealCards);
+window.addEventListener('load', revealCards);
+</script>
+<!-- REGISTERED OFFICE -->
+<section class="section">
+  <h2 class="title">Registered Office</h2>
+
+  <div class="contact-box">
+    #22/23, 2nd Floor TR Plaza<br>
+    Double Road, Rajarajeshwari Nagar, Bengaluru – 560098<br><br>
+    📞 +91 96639 38889<br>
+    ✉ ContactUs@terrafluxgv.com
+  </div>
+</section>
+
+<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
+
+<footer style="background:#000;color:#fff;font-family:Georgia,serif;padding:80px 8% 30px;margin-top:100px;">
+
+  <div style="height:2px;background:linear-gradient(90deg,transparent,#D4AF37,transparent);margin-bottom:60px;"></div>
+
+  <div style="max-width:1200px;margin:auto;display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between;">
+
+    <!-- Brand -->
+    <div style="flex:1;min-width:220px;">
+      <h2 style="color:#D4AF37;letter-spacing:2px;">TERRAFLUX</h2>
+      <p style="color:#aaa;line-height:1.8;margin-top:15px;">
+        Global logistics infrastructure engineered for precision,
+        resilience, and enterprise scalability.
+      </p>
+    </div>
+
+    <!-- Links -->
+    <div style="flex:1;min-width:200px;">
+      <h3 style="color:#D4AF37;margin-bottom:20px;">Quick Links</h3>
+      <p><a href="index.html" style="color:#aaa;text-decoration:none;">Home</a></p>
+      <p><a href="logistics.html" style="color:#aaa;text-decoration:none;">Logistics</a></p>
+      <p><a href="warehousing.html" style="color:#aaa;text-decoration:none;">Warehousing</a></p>
+      <p><a href="about.html" style="color:#aaa;text-decoration:none;">About</a></p>
+      <p><a href="contact.html" style="color:#aaa;text-decoration:none;">Contact</a></p>
+    </div>
+
+    <!-- Contact -->
+    <div style="flex:1;min-width:200px;">
+      <h3 style="color:#D4AF37;margin-bottom:20px;">Contact</h3>
+      <p style="color:#aaa;line-height:1.8;">
+        📍 Bangalore, India<br>
+        📞 +91 98765 43210<br>
+        ✉ info@terraflux.com
+      </p>
+    </div>
+
+  </div>
+
+  <div style="margin-top:60px;text-align:center;border-top:1px solid rgba(255,255,255,0.1);padding-top:20px;color:#777;">
+    © 2026 Terraflux. All Rights Reserved.
+  </div>
+
+</footer>
+<script>
+/* Animate on Scroll */
+const animateItems = document.querySelectorAll('.title, .subtitle, .responsive-img, .contact-box');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.style.opacity = "1";
+      entry.target.style.transform = "translateY(0)";
+      observer.unobserve(entry.target);
+    }
+  });
+},{
+  threshold:0.2
+});
+
+animateItems.forEach(el => {
+  observer.observe(el);
+});
+</script>
+
+</body>
+</html>
