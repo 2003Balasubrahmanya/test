@@ -153,76 +153,28 @@ header{
 
 <body>
 
-<header style="width:100%;position:fixed;top:0;left:0;background:#0b1d2d;z-index:1000;box-shadow:0 4px 12px rgba(0,0,0,0.2);font-family:Segoe UI, sans-serif;">
 
-    <div style="display:flex;justify-content:space-between;align-items:center;padding:18px 8%;">
 
-        <!-- Logo -->
-        <div onclick="window.location.href='index.html'" 
-             style="color:#ffffff;font-size:18px;font-weight:700;letter-spacing:1px;cursor:pointer;">
-            TERRAFLUX GLOBAL VENTURES PVT LTD
-        </div>
 
-        <!-- Navigation -->
-        <nav id="navLinks" style="display:flex;gap:30px;align-items:center;transition:0.4s;">
-            <a href="index.html" style="color:white;text-decoration:none;font-weight:500;transition:0.3s;">Home</a>
-            <a href="logistics.html" style="color:white;text-decoration:none;font-weight:500;transition:0.3s;">Logistics</a>
-            <a href="warehousing.html" style="color:white;text-decoration:none;font-weight:500;transition:0.3s;">Warehousing</a>
-            <a href="about.html" style="color:white;text-decoration:none;font-weight:500;transition:0.3s;">About</a>
-            <a href="contact.html" style="color:white;text-decoration:none;font-weight:500;transition:0.3s;">Contact</a>
+<header>
+    <div class="navbar">
+        <div class="logo">TERRAFLUX</div>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="logistics.html">Logistics</a>
+            <a href="warehousing.html">Warehousing</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
         </nav>
 
-        <!-- Hamburger -->
-        <div id="hamburger" onclick="toggleMenu()" 
-             style="display:none;flex-direction:column;cursor:pointer;gap:5px;">
-            <span style="width:25px;height:3px;background:white;display:block;transition:0.3s;"></span>
-            <span style="width:25px;height:3px;background:white;display:block;transition:0.3s;"></span>
-            <span style="width:25px;height:3px;background:white;display:block;transition:0.3s;"></span>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-
     </div>
 </header>
-
-<!-- Spacer -->
-<div style="height:80px;"></div>
-
-<script>
-function toggleMenu(){
-    var nav = document.getElementById("navLinks");
-    if(nav.style.display === "flex"){
-        nav.style.display = "none";
-    } else {
-        nav.style.display = "flex";
-        nav.style.flexDirection = "column";
-        nav.style.position = "absolute";
-        nav.style.top = "70px";
-        nav.style.right = "8%";
-        nav.style.background = "#0b1d2d";
-        nav.style.padding = "20px";
-        nav.style.borderRadius = "8px";
-        nav.style.boxShadow = "0 6px 15px rgba(0,0,0,0.3)";
-    }
-}
-
-function checkScreen(){
-    var nav = document.getElementById("navLinks");
-    var ham = document.getElementById("hamburger");
-
-    if(window.innerWidth < 900){
-        nav.style.display = "none";
-        ham.style.display = "flex";
-    }else{
-        nav.style.display = "flex";
-        nav.style.flexDirection = "row";
-        nav.style.position = "static";
-        nav.style.background = "none";
-        ham.style.display = "none";
-    }
-}
-
-checkScreen();
-window.onresize = checkScreen;
-</script>
 <div class="page-content">
     <section style="
 position:relative;
