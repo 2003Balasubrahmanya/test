@@ -217,8 +217,94 @@ footer p{color:#777;margin-top:10px;}
 
 <body>
 
+<style>
+body{
+  margin:0;
+  font-family:Segoe UI, sans-serif;
+}
+
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  background:#0f0f0f;
+  box-shadow:0 4px 15px rgba(0,0,0,0.6);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 6%;
+  z-index:1000;
+}
+
+/* Logo */
+.logo{
+  color:#D4AF37;
+  font-size:20px;
+  font-weight:700;
+  letter-spacing:2px;
+  cursor:pointer;
+}
+
+/* Desktop Navigation */
+#navLinks{
+  display:flex;
+  gap:40px;
+}
+
+#navLinks a{
+  text-decoration:none;
+  color:#D4AF37;
+  font-size:16px;
+  transition:0.3s;
+}
+
+#navLinks a:hover{
+  color:#ffd700;
+}
+
+/* Hamburger */
+#hamburger{
+  display:none;
+  flex-direction:column;
+  gap:6px;
+  cursor:pointer;
+}
+
+#hamburger span{
+  width:28px;
+  height:3px;
+  background:#D4AF37;
+}
+
+/* Tablet & Mobile */
+@media(max-width:900px){
+
+  #navLinks{
+    position:absolute;
+    top:70px;
+    right:6%;
+    background:#141414;
+    flex-direction:column;
+    gap:25px;
+    padding:25px 35px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.8);
+    display:none;
+  }
+
+  #hamburger{
+    display:flex;
+  }
+}
+
+</style>
+
+
 <header>
-  <div class="logo">TERRAFLUX</div>
+  <div class="logo" onclick="window.location.href='index.html'">
+    TERRAFLUX
+  </div>
 
   <div id="navLinks">
     <a href="#">Home</a>
@@ -229,10 +315,25 @@ footer p{color:#777;margin-top:10px;}
   </div>
 
   <div id="hamburger" onclick="toggleMenu()">
-    <span></span><span></span><span></span>
+    <span></span>
+    <span></span>
+    <span></span>
   </div>
 </header>
 
+<div style="height:90px;"></div>
+
+<script>
+function toggleMenu(){
+  var nav = document.getElementById("navLinks");
+
+  if(nav.style.display === "flex"){
+    nav.style.display = "none";
+  } else {
+    nav.style.display = "flex";
+  }
+}
+</script>
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
