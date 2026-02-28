@@ -223,6 +223,7 @@ body{
   font-family:Segoe UI, sans-serif;
 }
 
+/* Header */
 header{
   position:fixed;
   top:0;
@@ -246,7 +247,7 @@ header{
   cursor:pointer;
 }
 
-/* Desktop Navigation */
+/* Navigation */
 #navLinks{
   display:flex;
   gap:40px;
@@ -275,9 +276,10 @@ header{
   width:28px;
   height:3px;
   background:#D4AF37;
+  transition:0.3s;
 }
 
-/* Tablet & Mobile */
+/* Mobile & Tablet */
 @media(max-width:900px){
 
   #navLinks{
@@ -297,7 +299,6 @@ header{
     display:flex;
   }
 }
-
 </style>
 
 
@@ -308,13 +309,13 @@ header{
 
   <div id="navLinks">
     <a href="#">Home</a>
-    <a href="#" style="color:#D4AF37;">Logistics</a>
+    <a href="#">Logistics</a>
     <a href="#">Warehousing</a>
     <a href="#">About</a>
     <a href="#">Contact</a>
   </div>
 
-  <div id="hamburger" onclick="toggleMenu()">
+  <div id="hamburger">
     <span></span>
     <span></span>
     <span></span>
@@ -324,15 +325,38 @@ header{
 <div style="height:90px;"></div>
 
 <script>
-function toggleMenu(){
-  var nav = document.getElementById("navLinks");
+const nav = document.getElementById("navLinks");
+const ham = document.getElementById("hamburger");
 
+// Toggle menu
+ham.addEventListener("click", function(e){
+  e.stopPropagation();
   if(nav.style.display === "flex"){
     nav.style.display = "none";
   } else {
     nav.style.display = "flex";
   }
-}
+});
+
+// Close when clicking outside
+document.addEventListener("click", function(e){
+  if(
+    nav.style.display === "flex" &&
+    !nav.contains(e.target) &&
+    !ham.contains(e.target)
+  ){
+    nav.style.display = "none";
+  }
+});
+
+// Close when clicking link (mobile)
+document.querySelectorAll("#navLinks a").forEach(link=>{
+  link.addEventListener("click", function(){
+    if(window.innerWidth < 900){
+      nav.style.display = "none";
+    }
+  });
+});
 </script>
 <!-- HERO -->
 <section class="hero">
