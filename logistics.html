@@ -220,37 +220,36 @@ footer p{color:#777;margin-top:10px;}
 <header style="width:100%;position:fixed;top:0;left:0;background:#0f0f0f;
 box-shadow:0 4px 15px rgba(0,0,0,0.6);z-index:1000;font-family:Segoe UI, sans-serif;">
 
-    <div style="display:flex;align-items:center;justify-content:space-between;padding:18px 5%;">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 5%;position:relative;">
 
-        <!-- LEFT : Company Name -->
+        <!-- Logo -->
         <div onclick="window.location.href='index.html'" 
-             style="color:#d4af37;font-size:20px;font-weight:700;letter-spacing:1.5px;cursor:pointer;white-space:nowrap;">
-            TERRAFLUX GLOBAL VENTURES PVT LTD
+             style="color:#d4af37;font-size:18px;font-weight:700;letter-spacing:1px;cursor:pointer;">
+            TERRAFLUX GLOBAL VENTURES
         </div>
 
-        <!-- CENTER : Navigation -->
+        <!-- Navigation -->
         <nav id="navLinks" 
-             style="display:flex;gap:40px;align-items:center;justify-content:center;flex:1;">
-            <a href="index.html" style="color:#d4af37;text-decoration:none;font-weight:500;transition:0.3s;">Home</a>
-            <a href="logistics.html" style="color:#d4af37;text-decoration:none;font-weight:500;transition:0.3s;">Logistics</a>
-            <a href="warehousing.html" style="color:#d4af37;text-decoration:none;font-weight:500;transition:0.3s;">Warehousing</a>
-            <a href="about.html" style="color:#d4af37;text-decoration:none;font-weight:500;transition:0.3s;">About</a>
-            <a href="contact.html" style="color:#d4af37;text-decoration:none;font-weight:500;transition:0.3s;">Contact</a>
+             style="display:flex;gap:35px;align-items:center;transition:0.4s;">
+            <a href="index.html" style="color:#d4af37;text-decoration:none;">Home</a>
+            <a href="logistics.html" style="color:#d4af37;text-decoration:none;">Logistics</a>
+            <a href="warehousing.html" style="color:#d4af37;text-decoration:none;">Warehousing</a>
+            <a href="about.html" style="color:#d4af37;text-decoration:none;">About</a>
+            <a href="contact.html" style="color:#d4af37;text-decoration:none;">Contact</a>
         </nav>
 
-        <!-- RIGHT : Hamburger -->
+        <!-- Hamburger -->
         <div id="hamburger" onclick="toggleMenu()" 
              style="display:none;flex-direction:column;gap:6px;cursor:pointer;">
-            <span style="width:28px;height:3px;background:#d4af37;"></span>
-            <span style="width:28px;height:3px;background:#d4af37;"></span>
-            <span style="width:28px;height:3px;background:#d4af37;"></span>
+            <span style="width:26px;height:3px;background:#d4af37;"></span>
+            <span style="width:26px;height:3px;background:#d4af37;"></span>
+            <span style="width:26px;height:3px;background:#d4af37;"></span>
         </div>
 
     </div>
 </header>
 
-<!-- Spacer -->
-<div style="height:85px;"></div>
+<div style="height:75px;"></div>
 
 <script>
 function toggleMenu(){
@@ -261,12 +260,12 @@ function toggleMenu(){
         nav.style.display = "flex";
         nav.style.flexDirection = "column";
         nav.style.position = "absolute";
-        nav.style.top = "75px";
+        nav.style.top = "60px";
         nav.style.right = "5%";
         nav.style.background = "#141414";
-        nav.style.padding = "25px";
-        nav.style.borderRadius = "8px";
-        nav.style.boxShadow = "0 8px 20px rgba(0,0,0,0.7)";
+        nav.style.padding = "20px 30px";
+        nav.style.borderRadius = "10px";
+        nav.style.boxShadow = "0 8px 20px rgba(0,0,0,0.8)";
         nav.style.gap = "20px";
     }
 }
@@ -275,7 +274,7 @@ function checkScreen(){
     var nav = document.getElementById("navLinks");
     var ham = document.getElementById("hamburger");
 
-    if(window.innerWidth < 1000){
+    if(window.innerWidth < 900){
         nav.style.display = "none";
         ham.style.display = "flex";
     } else {
@@ -283,6 +282,7 @@ function checkScreen(){
         nav.style.flexDirection = "row";
         nav.style.position = "static";
         nav.style.background = "none";
+        nav.style.boxShadow = "none";
         ham.style.display = "none";
     }
 }
@@ -290,15 +290,13 @@ function checkScreen(){
 checkScreen();
 window.onresize = checkScreen;
 
-/* Gold Hover Glow */
+/* Gold Hover */
 document.querySelectorAll("#navLinks a").forEach(link=>{
     link.addEventListener("mouseover", function(){
         this.style.color="#ffd700";
-        this.style.textShadow="0 0 8px rgba(212,175,55,0.8)";
     });
     link.addEventListener("mouseout", function(){
         this.style.color="#d4af37";
-        this.style.textShadow="none";
     });
 });
 </script>
