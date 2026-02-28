@@ -218,19 +218,23 @@ footer p{color:#777;margin-top:10px;}
 <body>
 
 <header style="width:100%;position:fixed;top:0;left:0;background:#0f0f0f;
-box-shadow:0 4px 15px rgba(0,0,0,0.6);z-index:1000;font-family:Segoe UI, sans-serif;">
+box-shadow:0 4px 18px rgba(0,0,0,0.7);z-index:1000;font-family:Segoe UI, sans-serif;">
 
-    <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 5%;position:relative;">
+    <div style="max-width:1300px;margin:auto;
+                display:flex;align-items:center;justify-content:space-between;
+                padding:20px 6%;position:relative;">
 
         <!-- Logo -->
         <div onclick="window.location.href='index.html'" 
-             style="color:#d4af37;font-size:18px;font-weight:700;letter-spacing:1px;cursor:pointer;">
+             style="color:#d4af37;font-size:20px;font-weight:700;
+                    letter-spacing:2px;cursor:pointer;white-space:nowrap;">
             TERRAFLUX GLOBAL VENTURES
         </div>
 
         <!-- Navigation -->
         <nav id="navLinks" 
-             style="display:flex;gap:35px;align-items:center;transition:0.4s;">
+             style="display:flex;gap:50px;align-items:center;
+                    font-size:16px;">
             <a href="index.html" style="color:#d4af37;text-decoration:none;">Home</a>
             <a href="logistics.html" style="color:#d4af37;text-decoration:none;">Logistics</a>
             <a href="warehousing.html" style="color:#d4af37;text-decoration:none;">Warehousing</a>
@@ -239,68 +243,66 @@ box-shadow:0 4px 15px rgba(0,0,0,0.6);z-index:1000;font-family:Segoe UI, sans-se
         </nav>
 
         <!-- Hamburger -->
-        <div id="hamburger" onclick="toggleMenu()" 
+        <div id="hamburger" 
              style="display:none;flex-direction:column;gap:6px;cursor:pointer;">
-            <span style="width:26px;height:3px;background:#d4af37;"></span>
-            <span style="width:26px;height:3px;background:#d4af37;"></span>
-            <span style="width:26px;height:3px;background:#d4af37;"></span>
+            <span style="width:28px;height:3px;background:#d4af37;"></span>
+            <span style="width:28px;height:3px;background:#d4af37;"></span>
+            <span style="width:28px;height:3px;background:#d4af37;"></span>
         </div>
 
     </div>
 </header>
 
-<div style="height:75px;"></div>
+<div style="height:95px;"></div>
 
 <script>
-function toggleMenu(){
-    var nav = document.getElementById("navLinks");
-    if(nav.style.display === "flex"){
-        nav.style.display = "none";
-    } else {
+var nav = document.getElementById("navLinks");
+var ham = document.getElementById("hamburger");
+var isOpen = false;
+
+// Hamburger click
+ham.onclick = function() {
+    if(!isOpen){
         nav.style.display = "flex";
         nav.style.flexDirection = "column";
         nav.style.position = "absolute";
-        nav.style.top = "60px";
-        nav.style.right = "5%";
+        nav.style.top = "75px";
+        nav.style.right = "6%";
         nav.style.background = "#141414";
-        nav.style.padding = "20px 30px";
-        nav.style.borderRadius = "10px";
-        nav.style.boxShadow = "0 8px 20px rgba(0,0,0,0.8)";
-        nav.style.gap = "20px";
+        nav.style.padding = "25px 35px";
+        nav.style.borderRadius = "12px";
+        nav.style.boxShadow = "0 10px 25px rgba(0,0,0,0.8)";
+        nav.style.gap = "25px";
+        nav.style.fontSize = "17px";
+        isOpen = true;
+    } else {
+        nav.style.display = "none";
+        isOpen = false;
     }
-}
+};
 
+// Responsive check
 function checkScreen(){
-    var nav = document.getElementById("navLinks");
-    var ham = document.getElementById("hamburger");
-
     if(window.innerWidth < 900){
-        nav.style.display = "flex";
+        nav.style.display = "none";
         ham.style.display = "flex";
+        isOpen = false;
     } else {
         nav.style.display = "flex";
         nav.style.flexDirection = "row";
         nav.style.position = "static";
         nav.style.background = "none";
         nav.style.boxShadow = "none";
+        nav.style.gap = "50px";
+        nav.style.fontSize = "16px";
         ham.style.display = "none";
+        isOpen = false;
     }
 }
 
 checkScreen();
 window.onresize = checkScreen;
-
-/* Gold Hover */
-document.querySelectorAll("#navLinks a").forEach(link=>{
-    link.addEventListener("mouseover", function(){
-        this.style.color="#ffd700";
-    });
-    link.addEventListener("mouseout", function(){
-        this.style.color="#d4af37";
-    });
-});
 </script>
-
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
