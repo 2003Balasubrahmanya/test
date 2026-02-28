@@ -220,16 +220,17 @@ footer p{color:#777;margin-top:10px;}
 <header style="width:100%;position:fixed;top:0;left:0;background:#0f0f0f;
 box-shadow:0 4px 15px rgba(0,0,0,0.6);z-index:1000;font-family:Segoe UI, sans-serif;">
 
-    <div style="display:flex;justify-content:space-between;align-items:center;padding:18px 8%;">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:18px 5%;">
 
-        <!-- Logo (Clickable) -->
+        <!-- LEFT : Company Name -->
         <div onclick="window.location.href='index.html'" 
-             style="color:#d4af37;font-size:22px;font-weight:700;letter-spacing:2px;cursor:pointer;">
-            TERRAFLUX
+             style="color:#d4af37;font-size:20px;font-weight:700;letter-spacing:1.5px;cursor:pointer;white-space:nowrap;">
+            TERRAFLUX GLOBAL VENTURES PVT LTD
         </div>
 
-        <!-- Navigation Links -->
-        <nav id="navLinks" style="display:flex;gap:35px;align-items:center;">
+        <!-- CENTER : Navigation -->
+        <nav id="navLinks" 
+             style="display:flex;gap:40px;align-items:center;justify-content:center;flex:1;">
             <a href="index.html" style="color:#d4af37;text-decoration:none;font-weight:500;transition:0.3s;">Home</a>
             <a href="logistics.html" style="color:#d4af37;text-decoration:none;font-weight:500;transition:0.3s;">Logistics</a>
             <a href="warehousing.html" style="color:#d4af37;text-decoration:none;font-weight:500;transition:0.3s;">Warehousing</a>
@@ -237,7 +238,7 @@ box-shadow:0 4px 15px rgba(0,0,0,0.6);z-index:1000;font-family:Segoe UI, sans-se
             <a href="contact.html" style="color:#d4af37;text-decoration:none;font-weight:500;transition:0.3s;">Contact</a>
         </nav>
 
-        <!-- Hamburger Menu -->
+        <!-- RIGHT : Hamburger -->
         <div id="hamburger" onclick="toggleMenu()" 
              style="display:none;flex-direction:column;gap:6px;cursor:pointer;">
             <span style="width:28px;height:3px;background:#d4af37;"></span>
@@ -261,9 +262,9 @@ function toggleMenu(){
         nav.style.flexDirection = "column";
         nav.style.position = "absolute";
         nav.style.top = "75px";
-        nav.style.right = "8%";
+        nav.style.right = "5%";
         nav.style.background = "#141414";
-        nav.style.padding = "20px";
+        nav.style.padding = "25px";
         nav.style.borderRadius = "8px";
         nav.style.boxShadow = "0 8px 20px rgba(0,0,0,0.7)";
         nav.style.gap = "20px";
@@ -274,7 +275,7 @@ function checkScreen(){
     var nav = document.getElementById("navLinks");
     var ham = document.getElementById("hamburger");
 
-    if(window.innerWidth < 900){
+    if(window.innerWidth < 1000){
         nav.style.display = "none";
         ham.style.display = "flex";
     } else {
@@ -289,7 +290,7 @@ function checkScreen(){
 checkScreen();
 window.onresize = checkScreen;
 
-/* Gold Hover Effect */
+/* Gold Hover Glow */
 document.querySelectorAll("#navLinks a").forEach(link=>{
     link.addEventListener("mouseover", function(){
         this.style.color="#ffd700";
@@ -301,7 +302,6 @@ document.querySelectorAll("#navLinks a").forEach(link=>{
     });
 });
 </script>
-
 
 <!-- HERO -->
 <section class="hero">
