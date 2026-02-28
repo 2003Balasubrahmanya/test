@@ -217,89 +217,33 @@ footer p{color:#777;margin-top:10px;}
 
 <body>
 
-<header style="width:100%;position:fixed;top:0;left:0;background:#0f0f0f;
-box-shadow:0 4px 18px rgba(0,0,0,0.7);z-index:1000;
-font-family:Segoe UI, sans-serif;">
+<header>
+  <div class="logo">TERRAFLUX</div>
 
-    <div style="max-width:1300px;margin:auto;
-                display:flex;align-items:center;justify-content:space-between;
-                padding:20px 6%;">
+  <div id="navLinks">
+    <a href="#">Home</a>
+    <a href="#" style="color:#D4AF37;">Logistics</a>
+    <a href="#">Warehousing</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </div>
 
-        <!-- LEFT : Company Name -->
-        <div onclick="window.location.href='index.html'"
-             style="color:#d4af37;font-size:20px;font-weight:700;
-                    letter-spacing:2px;cursor:pointer;white-space:nowrap;">
-            TERRAFLUX GLOBAL VENTURES
-        </div>
-
-        <!-- RIGHT : Navigation -->
-        <nav id="navLinks"
-             style="display:flex;gap:40px;align-items:center;font-size:16px;">
-            <a href="index.html" style="color:#d4af37;text-decoration:none;">Home</a>
-            <a href="logistics.html" style="color:#d4af37;text-decoration:none;">Logistics</a>
-            <a href="warehousing.html" style="color:#d4af37;text-decoration:none;">Warehousing</a>
-            <a href="about.html" style="color:#d4af37;text-decoration:none;">About</a>
-            <a href="contact.html" style="color:#d4af37;text-decoration:none;">Contact</a>
-        </nav>
-
-        <!-- Hamburger (Mobile Only) -->
-        <div id="hamburger"
-             style="display:none;flex-direction:column;gap:6px;cursor:pointer;">
-            <span style="width:28px;height:3px;background:#d4af37;"></span>
-            <span style="width:28px;height:3px;background:#d4af37;"></span>
-            <span style="width:28px;height:3px;background:#d4af37;"></span>
-        </div>
-
-    </div>
+  <div id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
 </header>
 
-<div style="height:95px;"></div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Next-Generation Logistics</h1>
+    <p>
+      Intelligent freight networks engineered with precision routing,
+      real-time tracking, and enterprise-grade scalability.
+    </p>
+  </div>
+</section>
 
-<script>
-var nav = document.getElementById("navLinks");
-var ham = document.getElementById("hamburger");
-var isOpen = false;
-
-// Toggle mobile
-ham.onclick = function () {
-    if (!isOpen) {
-        nav.style.display = "flex";
-        nav.style.flexDirection = "column";
-        nav.style.position = "absolute";
-        nav.style.top = "80px";
-        nav.style.right = "6%";
-        nav.style.background = "#141414";
-        nav.style.padding = "25px 35px";
-        nav.style.borderRadius = "12px";
-        nav.style.boxShadow = "0 10px 25px rgba(0,0,0,0.8)";
-        nav.style.gap = "25px";
-        isOpen = true;
-    } else {
-        nav.style.display = "none";
-        isOpen = false;
-    }
-};
-
-// Responsive logic
-function checkScreen() {
-    if (window.innerWidth < 900) {
-        nav.style.display = "none";
-        ham.style.display = "flex";
-        isOpen = false;
-    } else {
-        nav.style.display = "flex";
-        nav.style.flexDirection = "row";
-        nav.style.position = "static";
-        nav.style.background = "none";
-        nav.style.boxShadow = "none";
-        ham.style.display = "none";
-        isOpen = false;
-    }
-}
-
-checkScreen();
-window.onresize = checkScreen;
-</script>
 <!-- SERVICES -->
 <section class="section">
   <h2 class="section-title">Freight Architecture</h2>
