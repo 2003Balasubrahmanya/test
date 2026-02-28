@@ -222,19 +222,19 @@ box-shadow:0 4px 18px rgba(0,0,0,0.7);z-index:1000;font-family:Segoe UI, sans-se
 
     <div style="max-width:1300px;margin:auto;
                 display:flex;align-items:center;justify-content:space-between;
-                padding:20px 6%;position:relative;">
+                padding:18px 6%;position:relative;">
 
         <!-- Logo -->
         <div onclick="window.location.href='index.html'" 
-             style="color:#d4af37;font-size:20px;font-weight:700;
-                    letter-spacing:2px;cursor:pointer;white-space:nowrap;">
+             style="color:#d4af37;font-size:19px;font-weight:700;
+                    letter-spacing:1.5px;cursor:pointer;white-space:nowrap;">
             TERRAFLUX GLOBAL VENTURES
         </div>
 
         <!-- Navigation -->
-        <nav id="navLinks" 
-             style="display:flex;gap:50px;align-items:center;
-                    font-size:16px;">
+        <nav id="navLinks"
+             style="display:flex;gap:45px;align-items:center;
+                    font-size:16px;transition:0.3s;">
             <a href="index.html" style="color:#d4af37;text-decoration:none;">Home</a>
             <a href="logistics.html" style="color:#d4af37;text-decoration:none;">Logistics</a>
             <a href="warehousing.html" style="color:#d4af37;text-decoration:none;">Warehousing</a>
@@ -243,7 +243,7 @@ box-shadow:0 4px 18px rgba(0,0,0,0.7);z-index:1000;font-family:Segoe UI, sans-se
         </nav>
 
         <!-- Hamburger -->
-        <div id="hamburger" 
+        <div id="hamburger"
              style="display:none;flex-direction:column;gap:6px;cursor:pointer;">
             <span style="width:28px;height:3px;background:#d4af37;"></span>
             <span style="width:28px;height:3px;background:#d4af37;"></span>
@@ -253,20 +253,20 @@ box-shadow:0 4px 18px rgba(0,0,0,0.7);z-index:1000;font-family:Segoe UI, sans-se
     </div>
 </header>
 
-<div style="height:95px;"></div>
+<div style="height:90px;"></div>
 
 <script>
 var nav = document.getElementById("navLinks");
 var ham = document.getElementById("hamburger");
 var isOpen = false;
 
-// Hamburger click
-ham.onclick = function() {
-    if(!isOpen){
+// Toggle menu
+ham.onclick = function () {
+    if (!isOpen) {
         nav.style.display = "flex";
         nav.style.flexDirection = "column";
         nav.style.position = "absolute";
-        nav.style.top = "75px";
+        nav.style.top = "70px";
         nav.style.right = "6%";
         nav.style.background = "#141414";
         nav.style.padding = "25px 35px";
@@ -281,9 +281,9 @@ ham.onclick = function() {
     }
 };
 
-// Responsive check
-function checkScreen(){
-    if(window.innerWidth < 900){
+// Responsive control
+function checkScreen() {
+    if (window.innerWidth < 900) {
         nav.style.display = "none";
         ham.style.display = "flex";
         isOpen = false;
@@ -293,7 +293,7 @@ function checkScreen(){
         nav.style.position = "static";
         nav.style.background = "none";
         nav.style.boxShadow = "none";
-        nav.style.gap = "50px";
+        nav.style.gap = "45px";
         nav.style.fontSize = "16px";
         ham.style.display = "none";
         isOpen = false;
