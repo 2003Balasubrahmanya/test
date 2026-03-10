@@ -1,5 +1,5 @@
 ```html
-<!-- ===== HEADER SECTION START ===== -->
+<!-- ===== TERRAFLUX HEADER ===== -->
 
 <style>
 :root{
@@ -12,6 +12,13 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 }
+
+body{
+font-family:Segoe UI, sans-serif;
+padding-top:80px;
+}
+
+/* HEADER */
 
 header{
 position:fixed;
@@ -26,7 +33,6 @@ justify-content:space-between;
 align-items:center;
 z-index:1000;
 border-bottom:1px solid rgba(212,175,55,0.3);
-font-family:Segoe UI, sans-serif;
 }
 
 /* LOGO */
@@ -39,7 +45,7 @@ letter-spacing:2px;
 cursor:pointer;
 }
 
-/* NAVIGATION */
+/* NAV LINKS */
 
 #navLinks{
 display:flex;
@@ -73,7 +79,21 @@ background:var(--gold);
 transition:0.3s;
 }
 
-/* MOBILE NAVIGATION */
+/* HAMBURGER ANIMATION */
+
+#hamburger.active span:nth-child(1){
+transform:rotate(45deg) translate(5px,5px);
+}
+
+#hamburger.active span:nth-child(2){
+opacity:0;
+}
+
+#hamburger.active span:nth-child(3){
+transform:rotate(-45deg) translate(6px,-6px);
+}
+
+/* MOBILE NAV */
 
 @media(max-width:900px){
 
@@ -81,7 +101,7 @@ transition:0.3s;
 position:fixed;
 top:70px;
 right:-100%;
-width:250px;
+width:260px;
 height:100vh;
 background:#111;
 flex-direction:column;
@@ -99,6 +119,7 @@ display:flex;
 }
 
 }
+
 </style>
 
 
@@ -129,13 +150,23 @@ TERRAFLUX
 
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
+const links = document.querySelectorAll("#navLinks a");
 
 hamburger.onclick = () => {
+
+hamburger.classList.toggle("active");
 navLinks.classList.toggle("active");
+
 };
+
+links.forEach(link=>{
+link.onclick=()=>{
+navLinks.classList.remove("active");
+hamburger.classList.remove("active");
+};
+});
 
 </script>
 
-<!-- ===== HEADER SECTION END ===== -->
+<!-- ===== END HEADER ===== -->
 ```
-
