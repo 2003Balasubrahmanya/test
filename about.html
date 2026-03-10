@@ -6,6 +6,7 @@
 <title>Terraflux | Page</title>
 
 <style>
+/* ===== BODY ===== */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -79,29 +80,30 @@ nav a:hover {
     position: fixed;
     top: 65px;
     right: -250px;
-    background: #111;
+    background: rgba(17,17,17,0.95);
     width: 220px;
     flex-direction: column;
     align-items: center;
     padding: 20px 0;
     gap: 20px;
     transition: right 0.3s ease;
+    z-index: 999;
   }
   nav.active { right: 0; }
-  nav a { padding: 10px 0; }
+  nav a { padding: 10px 0; font-size: 16px; }
 
   .menu-btn { display: flex; }
 }
 
 /* Hamburger animation to X */
 .menu-btn.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px,5px);
+  transform: rotate(45deg) translate(5px, 5px);
 }
 .menu-btn.active span:nth-child(2) {
   opacity: 0;
 }
 .menu-btn.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px,-5px);
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 </style>
 </head>
