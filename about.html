@@ -1,21 +1,12 @@
 ```html
-<!-- ===== TERRAFLUX HEADER ===== -->
+<!-- ===== HEADER SESSION START ===== -->
 
 <style>
-:root{
---gold:#D4AF37;
---black:#0b0b0f;
-}
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
 
 body{
-font-family:Segoe UI, sans-serif;
-padding-top:80px;
+margin:0;
+font-family:Arial, sans-serif;
+padding-top:70px;
 }
 
 /* HEADER */
@@ -25,97 +16,71 @@ position:fixed;
 top:0;
 left:0;
 width:100%;
-background:rgba(0,0,0,0.9);
-backdrop-filter:blur(10px);
-padding:18px 8%;
+background:#0f0f0f;
 display:flex;
 justify-content:space-between;
 align-items:center;
+padding:16px 6%;
 z-index:1000;
-border-bottom:1px solid rgba(212,175,55,0.3);
 }
 
 /* LOGO */
 
 .logo{
-color:var(--gold);
-font-size:20px;
-font-weight:700;
-letter-spacing:2px;
-cursor:pointer;
+color:#D4AF37;
+font-size:18px;
+font-weight:bold;
+letter-spacing:1px;
 }
 
-/* NAV LINKS */
+/* NAVIGATION */
 
-#navLinks{
+nav{
 display:flex;
-gap:35px;
+gap:30px;
 }
 
-#navLinks a{
-color:#ccc;
+nav a{
+color:#D4AF37;
 text-decoration:none;
-font-size:16px;
-transition:.3s;
-}
-
-#navLinks a:hover{
-color:var(--gold);
+font-size:15px;
 }
 
 /* HAMBURGER */
 
-#hamburger{
+.menu-btn{
 display:none;
-flex-direction:column;
-gap:5px;
+font-size:26px;
+color:#D4AF37;
 cursor:pointer;
 }
 
-#hamburger span{
-width:26px;
-height:3px;
-background:var(--gold);
-transition:0.3s;
-}
+/* MOBILE */
 
-/* HAMBURGER ANIMATION */
+@media(max-width:768px){
 
-#hamburger.active span:nth-child(1){
-transform:rotate(45deg) translate(5px,5px);
-}
-
-#hamburger.active span:nth-child(2){
-opacity:0;
-}
-
-#hamburger.active span:nth-child(3){
-transform:rotate(-45deg) translate(6px,-6px);
-}
-
-/* MOBILE NAV */
-
-@media(max-width:900px){
-
-#navLinks{
-position:fixed;
-top:70px;
-right:-100%;
-width:260px;
-height:100vh;
-background:#111;
-flex-direction:column;
-padding:40px 25px;
-gap:25px;
-transition:0.4s;
-}
-
-#navLinks.active{
+nav{
+position:absolute;
+top:65px;
 right:0;
+background:#111;
+width:200px;
+flex-direction:column;
+align-items:center;
+display:none;
+padding:20px 0;
 }
 
-#hamburger{
+nav a{
+padding:10px 0;
+}
+
+nav.active{
 display:flex;
+}
+
+.menu-btn{
+display:block;
 }
 
 }
@@ -125,48 +90,30 @@ display:flex;
 
 <header>
 
-<div class="logo" onclick="location.href='index.html'">
-TERRAFLUX
-</div>
+<div class="logo">TERRAFLUX</div>
 
-<nav id="navLinks">
+<nav id="menu">
+
 <a href="index.html">Home</a>
 <a href="logistics.html">Logistics</a>
 <a href="warehousing.html">Warehousing</a>
 <a href="about.html">About</a>
 <a href="contact.html">Contact</a>
+
 </nav>
 
-<div id="hamburger">
-<span></span>
-<span></span>
-<span></span>
-</div>
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
 
 </header>
 
 
 <script>
 
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("navLinks");
-const links = document.querySelectorAll("#navLinks a");
-
-hamburger.onclick = () => {
-
-hamburger.classList.toggle("active");
-navLinks.classList.toggle("active");
-
-};
-
-links.forEach(link=>{
-link.onclick=()=>{
-navLinks.classList.remove("active");
-hamburger.classList.remove("active");
-};
-});
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("active");
+}
 
 </script>
 
-<!-- ===== END HEADER ===== -->
+<!-- ===== HEADER SESSION END ===== -->
 ```
