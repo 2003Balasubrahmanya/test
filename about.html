@@ -1,119 +1,268 @@
-```html
-<!-- ===== HEADER SESSION START ===== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terraflux | About</title>
 
 <style>
-
-body{
-margin:0;
-font-family:Arial, sans-serif;
-padding-top:70px;
+/* ===== BODY ===== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  padding-top: 70px; /* space for fixed header */
+  background: #0b0b0f;
+  color: #eee;
 }
 
-/* HEADER */
-
-header{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-background:#0f0f0f;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:16px 6%;
-z-index:1000;
+/* ===== HEADER + NAVIGATION SESSION ===== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(15,15,15,0.95);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 6%;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(212,175,55,0.3);
 }
 
-/* LOGO */
-
-.logo{
-color:#D4AF37;
-font-size:18px;
-font-weight:bold;
-letter-spacing:1px;
+.logo {
+  color: #D4AF37;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
 }
 
-/* NAVIGATION */
-
-nav{
-display:flex;
-gap:30px;
+nav {
+  display: flex;
+  gap: 30px;
 }
 
-nav a{
-color:#D4AF37;
-text-decoration:none;
-font-size:15px;
+nav a {
+  color: #D4AF37;
+  text-decoration: none;
+  font-size: 15px;
+  transition: 0.3s;
 }
 
-/* HAMBURGER */
-
-.menu-btn{
-display:none;
-font-size:26px;
-color:#D4AF37;
-cursor:pointer;
+nav a:hover {
+  color: #ffd700;
 }
 
-/* MOBILE */
-
-@media(max-width:768px){
-
-nav{
-position:absolute;
-top:65px;
-right:0;
-background:#111;
-width:200px;
-flex-direction:column;
-align-items:center;
-display:none;
-padding:20px 0;
+.menu-btn {
+  display: none;
+  font-size: 26px;
+  color: #D4AF37;
+  cursor: pointer;
 }
 
-nav a{
-padding:10px 0;
+@media(max-width:900px){
+  nav {
+    position: fixed;
+    top: 65px;
+    right: -100%;
+    background: #111;
+    width: 220px;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    gap: 20px;
+    transition: right 0.3s ease;
+  }
+
+  nav.active {
+    right: 0;
+  }
+
+  nav a {
+    padding: 10px 0;
+  }
+
+  .menu-btn {
+    display: block;
+  }
 }
 
-nav.active{
-display:flex;
+/* ===== HERO SECTION ===== */
+.hero {
+  height: 70vh;
+  background: url("Assets/about.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
 }
 
-.menu-btn{
-display:block;
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,.7), rgba(0,0,0,.9));
 }
 
+.hero-content {
+  position: relative;
+  max-width: 800px;
 }
 
+.hero h1 {
+  font-size: 3rem;
+  color: #D4AF37;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  color: #ddd;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* ===== ABOUT SECTION ===== */
+.section {
+  padding: 100px 8%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #D4AF37;
+  margin-bottom: 20px;
+}
+
+.section p {
+  color: #bbb;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+/* ===== CARDS ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid rgba(212,175,55,0.3);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(212,175,55,0.15);
+}
+
+.card h3 {
+  color: #D4AF37;
+  margin-bottom: 15px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #000;
+  padding: 60px 8%;
+  text-align: center;
+  border-top: 1px solid rgba(212,175,55,0.3);
+}
+
+footer h3 {
+  color: #D4AF37;
+  margin-bottom: 10px;
+}
+
+footer p {
+  color: #777;
+}
 </style>
+</head>
 
+<body>
 
+<!-- ===== HEADER + NAVIGATION SESSION ===== -->
 <header>
+  <div class="logo" onclick="window.location.href='index.html'">TERRAFLUX</div>
 
-<div class="logo">TERRAFLUX</div>
+  <nav id="navMenu">
+    <a href="index.html">Home</a>
+    <a href="logistics.html">Logistics</a>
+    <a href="warehousing.html">Warehousing</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-<nav id="menu">
-
-<a href="index.html">Home</a>
-<a href="logistics.html">Logistics</a>
-<a href="warehousing.html">Warehousing</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-
-</nav>
-
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
-
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
 </header>
 
-
 <script>
+const navMenu = document.getElementById("navMenu");
+const menuBtn = document.querySelector(".menu-btn");
 
-function toggleMenu(){
-document.getElementById("menu").classList.toggle("active");
+function toggleMenu() {
+  navMenu.classList.toggle("active");
+  menuBtn.classList.toggle("active");
 }
 
+// Auto-close mobile menu when a link is clicked
+const navLinks = navMenu.querySelectorAll("a");
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    navMenu.classList.remove("active");
+    menuBtn.classList.remove("active");
+  });
+});
 </script>
 
-<!-- ===== HEADER SESSION END ===== -->
-```
+<!-- ===== HERO SECTION ===== -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>About Terraflux</h1>
+    <p>Driving global logistics and warehousing solutions with precision, reliability, and innovation.</p>
+  </div>
+</section>
+
+<!-- ===== ABOUT SECTION ===== -->
+<section class="section">
+  <h2 class="section-title">Who We Are</h2>
+  <p>Terraflux Global Ventures Pvt Ltd is a modern logistics and warehousing company dedicated to providing seamless supply chain solutions across industries.</p>
+  <p>Our expertise spans transportation management, storage solutions, and operational logistics planning designed to support businesses in achieving efficiency, scalability, and reliability.</p>
+</section>
+
+<!-- ===== MISSION / VISION CARDS ===== -->
+<section class="section">
+  <h2 class="section-title">Our Values</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Our Mission</h3>
+      <p>To deliver dependable logistics and warehousing services that empower businesses to move goods efficiently across local and global markets.</p>
+    </div>
+    <div class="card">
+      <h3>Our Vision</h3>
+      <p>To become a globally trusted logistics partner known for operational excellence, innovation, and sustainable supply chain solutions.</p>
+    </div>
+    <div class="card">
+      <h3>Our Commitment</h3>
+      <p>We prioritize reliability, transparency, and performance to ensure our clients experience seamless logistics operations.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <h3>Terraflux Global Ventures Pvt Ltd</h3>
+  <p>© 2026 Terraflux Global Ventures. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
