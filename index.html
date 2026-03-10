@@ -400,6 +400,230 @@ document.querySelectorAll(".capCard").forEach(card=>{
   });
 });
 </script>
+
+<!-- ================== Integrated Global Capabilities Section START ================== -->
+<section id="capabilities" style="
+background:#0f0f0f;
+padding:110px 8%;
+font-family:Georgia, serif;
+color:#EDEDED;
+overflow:hidden;
+">
+
+<div style="
+display:flex;
+flex-wrap:wrap;
+align-items:center;
+gap:70px;
+justify-content:center;
+">
+
+<!-- ================== LEFT CONTENT START ================== -->
+<div class="capContent">
+
+<h2 class="title">
+Integrated Global Capabilities
+</h2>
+
+<p class="desc">
+Terraflux Global Ventures delivers next-generation logistics and
+infrastructure intelligence. Our systems blend predictive analytics,
+automation, and operational expertise to build resilient supply chains
+capable of supporting fast-moving global markets.
+</p>
+
+<div class="cards">
+
+<!-- Card 1 -->
+<div class="capCard">
+<h4>Precision Logistics Engineering</h4>
+<p>
+AI-assisted route planning and predictive demand modeling that ensures
+maximum transport efficiency and minimal operational waste.
+</p>
+</div>
+
+<!-- Card 2 -->
+<div class="capCard">
+<h4>Autonomous Warehousing</h4>
+<p>
+Smart storage facilities powered by robotics, real-time inventory
+tracking, and scalable infrastructure ready for future commerce.
+</p>
+</div>
+
+<!-- Card 3 -->
+<div class="capCard">
+<h4>Hyper-Connected Distribution</h4>
+<p>
+Integrated transportation networks connecting ports, warehouses,
+and last-mile delivery hubs across continents.
+</p>
+</div>
+
+</div>
+
+</div>
+<!-- ================== LEFT CONTENT END ================== -->
+
+
+<!-- ================== RIGHT IMAGE START ================== -->
+<div class="imageWrapper">
+
+<img id="capImage"
+src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7">
+
+</div>
+<!-- ================== RIGHT IMAGE END ================== -->
+
+</div>
+</section>
+<!-- ================== Integrated Global Capabilities Section END ================== -->
+
+
+<style>
+
+/* ================== TEXT STYLE ================== */
+
+.title{
+color:#D4AF37;
+font-size:2.5rem;
+margin-bottom:25px;
+letter-spacing:1px;
+}
+
+.desc{
+color:#CFCFCF;
+line-height:1.9;
+margin-bottom:35px;
+max-width:520px;
+}
+
+
+/* ================== CARD LAYOUT ================== */
+
+.cards{
+display:flex;
+flex-direction:column;
+gap:22px;
+}
+
+.capCard{
+background:#151515;
+padding:22px 28px;
+border-radius:12px;
+border:1px solid rgba(212,175,55,0.2);
+transition:0.4s ease;
+cursor:pointer;
+}
+
+.capCard h4{
+color:#D4AF37;
+margin-bottom:8px;
+}
+
+.capCard p{
+color:#CFCFCF;
+font-size:0.95rem;
+}
+
+/* Hover spice */
+.capCard:hover{
+transform:translateX(12px) scale(1.02);
+box-shadow:0 25px 45px rgba(212,175,55,0.3);
+border:1px solid rgba(212,175,55,0.4);
+}
+
+
+/* ================== IMAGE WRAPPER ================== */
+
+.imageWrapper{
+flex:1;
+min-width:320px;
+display:flex;
+justify-content:center;
+align-items:center;
+perspective:1000px;
+}
+
+/* ================== CRAZY IMAGE LANDING ANIMATION ================== */
+
+#capImage{
+width:100%;
+border-radius:16px;
+box-shadow:0 30px 70px rgba(0,0,0,0.7);
+animation:imageLanding 1.8s ease forwards;
+transition:0.6s ease;
+}
+
+/* Hover animation */
+#capImage:hover{
+transform:scale(1.07) rotate(1deg);
+box-shadow:0 45px 90px rgba(212,175,55,0.35);
+}
+
+
+/* Crazy landing keyframes */
+
+@keyframes imageLanding{
+
+0%{
+opacity:0;
+transform:translateX(120px) rotate(8deg) scale(0.7);
+}
+
+40%{
+opacity:0.6;
+transform:translateX(-20px) rotate(-4deg) scale(1.05);
+}
+
+70%{
+transform:translateX(10px) rotate(2deg) scale(0.98);
+}
+
+100%{
+opacity:1;
+transform:translateX(0) rotate(0) scale(1);
+}
+
+}
+
+
+/* ================== CONTENT FADE ================== */
+
+.capContent{
+flex:1;
+min-width:320px;
+animation:fadeUp 1.2s ease;
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+
+/* ================== RESPONSIVE ================== */
+
+@media(max-width:900px){
+
+#capabilities{
+padding:80px 6%;
+}
+
+.capContent{
+text-align:center;
+}
+
+}
+
+</style>
 <section style="background:#000; padding:100px 20px; font-family: 'Playfair Display', serif; color:white; text-align:center; position:relative; overflow:hidden;">
 
   <h2 style="font-size:42px; margin-bottom:20px; letter-spacing:2px;">
@@ -761,3 +985,4 @@ if(hamburger && navLinks){
 
 </body>
 </html>
+
