@@ -6,7 +6,6 @@
 <title>Terraflux | Page</title>
 
 <style>
-/* ===== BODY ===== */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -15,7 +14,7 @@ body {
   color: #eee;
 }
 
-/* ===== HEADER + NAVIGATION SESSION ===== */
+/* ===== HEADER ===== */
 header {
   position: fixed;
   top: 0;
@@ -30,6 +29,7 @@ header {
   border-bottom: 1px solid rgba(212,175,55,0.3);
 }
 
+/* LOGO */
 .logo {
   color: #D4AF37;
   font-size: 20px;
@@ -38,6 +38,7 @@ header {
   cursor: pointer;
 }
 
+/* NAVIGATION */
 nav {
   display: flex;
   gap: 30px;
@@ -54,18 +55,30 @@ nav a:hover {
   color: #ffd700;
 }
 
+/* HAMBURGER */
 .menu-btn {
   display: none;
-  font-size: 26px;
-  color: #D4AF37;
+  width: 28px;
+  height: 20px;
+  flex-direction: column;
+  justify-content: space-between;
   cursor: pointer;
 }
 
+.menu-btn span {
+  display: block;
+  height: 3px;
+  background: #D4AF37;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* MOBILE NAVIGATION */
 @media(max-width:900px){
   nav {
     position: fixed;
     top: 65px;
-    right: -100%;
+    right: -250px;
     background: #111;
     width: 220px;
     flex-direction: column;
@@ -74,22 +87,24 @@ nav a:hover {
     gap: 20px;
     transition: right 0.3s ease;
   }
+  nav.active { right: 0; }
+  nav a { padding: 10px 0; }
 
-  nav.active {
-    right: 0;
-  }
+  .menu-btn { display: flex; }
+}
 
-  nav a {
-    padding: 10px 0;
-  }
-
-  .menu-btn {
-    display: block;
-  }
+/* Hamburger animation to X */
+.menu-btn.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px,5px);
+}
+.menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-btn.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px,-5px);
 }
 </style>
 </head>
-
 <body>
 
 <header>
@@ -103,7 +118,11 @@ nav a:hover {
     <a href="contact.html">Contact</a>
   </nav>
 
-  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  <div class="menu-btn" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 </header>
 
 <script>
@@ -115,9 +134,8 @@ function toggleMenu() {
   menuBtn.classList.toggle("active");
 }
 
-// Auto-close menu when a link is clicked (mobile)
-const navLinks = navMenu.querySelectorAll("a");
-navLinks.forEach(link => {
+// Close mobile menu on link click
+navMenu.querySelectorAll("a").forEach(link => {
   link.addEventListener("click", () => {
     navMenu.classList.remove("active");
     menuBtn.classList.remove("active");
