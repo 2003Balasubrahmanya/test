@@ -4,251 +4,242 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TERRAFLUX GLOBAL - Contact</title>
-
 <style>
+/* ================= GENERAL ================= */
 body{
-margin:0;
-font-family:'Segoe UI',sans-serif;
-background:#000;
-color:#fff;
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:#000;
+  color:#fff;
 }
 
 /* ================= HEADER ================= */
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  background:rgba(13,13,13,0.95);
+  color:#fff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 8%;
+  font-family:Arial, sans-serif;
+  z-index:1000;
+  box-shadow:0 2px 10px rgba(0,0,0,0.3);
+}
 
-position:sticky;
-top:0;
-z-index:1000;
-background:#000;
-padding:18px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-border-bottom:1px solid rgba(255,25
+/* Logo */
+header .logo{
+  font-size:1.8rem;
+  font-weight:bold;
+  color:#D4AF37;
+}
+
+/* Navigation */
+nav{
+  display:flex;
+  gap:25px;
+  align-items:center;
+}
+
+/* Links */
+nav a{
+  color:white;
+  text-decoration:none;
+}
+
+nav a.active{
+  color:#D4AF37;
+}
+
+/* Dropdown */
+nav .dropdown{
+  position:relative;
+  cursor:pointer;
+}
+
+nav .dropdown-menu{
+  display:none;
+  position:absolute;
+  top:30px;
+  left:0;
+  background:#111;
+  padding:10px 0;
+  border-radius:6px;
+  min-width:160px;
+  z-index:1000;
+}
+
+nav .dropdown-menu a{
+  display:block;
+  padding:8px 15px;
+  color:white;
+  text-decoration:none;
+}
+
+nav .dropdown-menu a:hover{
+  background:#222;
+}
+
+/* Hamburger */
+.hamburger{
+  display:none;
+  flex-direction:column;
+  cursor:pointer;
+}
+
+.hamburger span{
+  height:3px;
+  width:25px;
+  background:#D4AF37;
+  margin:4px 0;
+  border-radius:2px;
+}
+
 /* ================= CONTACT SECTION ================= */
 .contact-section{
-min-height:100vh;
-padding:100px 8%;
-overflow:hidden;
+  min-height:100vh;
+  padding:100px 8%;
+  overflow:hidden;
 }
 
 .title{
-text-align:center;
-margin-bottom:70px;
+  text-align:center;
+  margin-bottom:70px;
 }
 
 .title h1{
-font-size:42px;
-color:#D4AF37;
-letter-spacing:2px;
+  font-size:42px;
+  color:#D4AF37;
+  letter-spacing:2px;
 }
 
 .contact-wrapper{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
-gap:50px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+  gap:50px;
 }
 
 .contact-box{
-background:rgba(255,255,255,0.05);
-padding:35px;
-border-radius:15px;
-backdrop-filter:blur(12px);
-box-shadow:0 25px 70px rgba(0,0,0,0.7);
-opacity:0;
-transition:all 1.2s ease;
+  background:rgba(255,255,255,0.05);
+  padding:35px;
+  border-radius:15px;
+  backdrop-filter:blur(12px);
+  box-shadow:0 25px 70px rgba(0,0,0,0.7);
+  opacity:0;
+  transition:all 1.2s ease;
 }
 
-/* Slide directions */
 .left-box{ transform:translateX(-120px); }
 .right-box{ transform:translateX(120px); }
 
 .contact-box.show{
-opacity:1;
-transform:translateX(0);
+  opacity:1;
+  transform:translateX(0);
 }
 
 /* Form */
-form input,
-form textarea{
-width:100%;
-padding:14px;
-margin-bottom:15px;
-background:#111;
-border:none;
-border-radius:8px;
-color:#fff;
+form input, form textarea{
+  width:100%;
+  padding:14px;
+  margin-bottom:15px;
+  background:#111;
+  border:none;
+  border-radius:8px;
+  color:#fff;
 }
 
 form button{
-width:100%;
-padding:14px;
-background:#D4AF37;
-border:none;
-border-radius:8px;
-font-weight:600;
-cursor:pointer;
-transition:0.4s;
+  width:100%;
+  padding:14px;
+  background:#D4AF37;
+  border:none;
+  border-radius:8px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.4s;
 }
 
 form button:hover{
-background:#fff;
-color:#000;
+  background:#fff;
+  color:#000;
 }
 
 /* Social Buttons */
 .social-buttons{
-margin-top:25px;
-display:flex;
-gap:15px;
-flex-wrap:wrap;
+  margin-top:25px;
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
 }
 
 .social-buttons a{
-padding:8px 16px;
-border:1px solid #D4AF37;
-border-radius:20px;
-color:#D4AF37;
-text-decoration:none;
-transition:0.3s;
+  padding:8px 16px;
+  border:1px solid #D4AF37;
+  border-radius:20px;
+  color:#D4AF37;
+  text-decoration:none;
+  transition:0.3s;
 }
 
 .social-buttons a:hover{
-background:#D4AF37;
-color:#000;
+  background:#D4AF37;
+  color:#000;
 }
 
 /* ================= MOBILE ================= */
-@media(max-width:900px){
+@media(max-width:768px){
+  nav{
+    display:none;
+    flex-direction:column;
+    position:absolute;
+    top:60px;
+    right:8%;
+    background:rgba(13,13,13,0.95);
+    padding:15px;
+    border-radius:8px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.3);
+    gap:20px;
+  }
 
-nav{
-position:absolute;
-top:70px;
-right:8%;
-background:#111;
-flex-direction:column;
-width:220px;
-padding:25px;
-border-radius:8px;
-gap:20px;
-display:none;
-box-shadow:0 15px 40px rgba(0,0,0,0.6);
+  .hamburger{
+    display:flex;
+  }
+
+  nav .dropdown-menu{
+    position:static;
+  }
 }
-
-#menuToggle{
-display:flex;
-}
-
-.contact-wrapper{
-gap:30px;
-}
-
-}
-
 </style>
 </head>
 <body>
 
-<!-- ================= HEADER ================= -->
-<!-- ===== START HEADER ===== -->
-<header style="position:fixed; top:0; left:0; width:100%; background:rgba(13,13,13,0.95); color:#fff; display:flex; justify-content:space-between; align-items:center; padding:12px 8%; font-family:Arial, sans-serif; z-index:1000; box-shadow:0 2px 10px rgba(0,0,0,0.3);">
-
-  <!-- Logo -->
-  <div style="font-size:1.8rem; font-weight:bold; color:#D4AF37;">TERRAFLUX</div>
-
-  <!-- Hamburger Menu (Mobile) -->
-  <div class="hamburger" onclick="toggleMenu()" 
-       style="display:none; flex-direction:column; cursor:pointer;">
-    <span style="height:3px;width:25px;background:#D4AF37;margin:4px 0;border-radius:2px;"></span>
-    <span style="height:3px;width:25px;background:#D4AF37;margin:4px 0;border-radius:2px;"></span>
-    <span style="height:3px;width:25px;background:#D4AF37;margin:4px 0;border-radius:2px;"></span>
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="logo">TERRAFLUX</div>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
   </div>
 
-  <!-- Navigation Links -->
-  <nav id="navLinks" style="display:flex; gap:25px; align-items:center;">
-    <a href="#home" style="color:white;text-decoration:none;">Home</a>
+  <nav id="navLinks">
+    <a href="#home">Home</a>
 
-    <!-- Dropdown -->
-    <div style="position:relative;">
-      <a href="#" onclick="toggleDropdown(event)" 
-         style="color:white;text-decoration:none; cursor:pointer;">Logistics ▾</a>
-      <div id="dropdownMenu"
-           style="display:none; position:absolute; top:30px; left:0; background:#111; padding:10px 0; border-radius:6px; min-width:160px; z-index:1000;">
-        <a href="#road" style="display:block;padding:8px 15px;color:white;text-decoration:none;">Road Freight</a>
-        <a href="#sea" style="display:block;padding:8px 15px;color:white;text-decoration:none;">Sea Freight</a>
-        <a href="#air" style="display:block;padding:8px 15px;color:white;text-decoration:none;">Air Cargo</a>
+    <div class="dropdown">
+      <a href="#" onclick="toggleDropdown(event)">Logistics ▾</a>
+      <div class="dropdown-menu">
+        <a href="#road">Road Freight</a>
+        <a href="#sea">Sea Freight</a>
+        <a href="#air">Air Cargo</a>
       </div>
     </div>
 
-    <a href="#warehousing" style="color:#D4AF37;text-decoration:none;">Warehousing</a>
-    <a href="#about" style="color:white;text-decoration:none;">About</a>
-    <a href="#contact" style="color:white;text-decoration:none;">Contact</a>
+    <a href="#warehousing" class="active">Warehousing</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
   </nav>
 </header>
-<!-- ===== END HEADER ===== -->
-
-<script>
-const nav = document.getElementById('navLinks');
-const hamburger = document.querySelector('.hamburger');
-const dropdownMenu = document.getElementById('dropdownMenu');
-
-// Toggle mobile menu
-function toggleMenu(){
-  if(nav.style.display==='flex'){
-    nav.style.display='none';
-  } else {
-    nav.style.display='flex';
-    nav.style.flexDirection='column';
-    nav.style.background='rgba(13,13,13,0.95)';
-    nav.style.position='absolute';
-    nav.style.top='60px';
-    nav.style.right='8%';
-    nav.style.padding='15px';
-    nav.style.borderRadius='8px';
-    nav.style.boxShadow='0 2px 10px rgba(0,0,0,0.3)';
-  }
-}
-
-// Toggle dropdown menu
-function toggleDropdown(e){
-  e.preventDefault(); // prevent link jump
-  if(dropdownMenu.style.display==='block'){
-    dropdownMenu.style.display='none';
-  } else {
-    dropdownMenu.style.display='block';
-  }
-}
-
-// Responsive behavior
-function handleResize(){
-  if(window.innerWidth <= 768){
-    nav.style.display='none';
-    nav.style.flexDirection='column';
-    hamburger.style.display='flex';
-  } else {
-    nav.style.display='flex';
-    nav.style.flexDirection='row';
-    nav.style.position='static';
-    nav.style.background='transparent';
-    nav.style.padding='0';
-    nav.style.boxShadow='none';
-    hamburger.style.display='none';
-    dropdownMenu.style.position='absolute';
-  }
-}
-
-// Close mobile dropdown if link clicked
-nav.querySelectorAll('a').forEach(link=>{
-  link.addEventListener('click', ()=>{
-    if(window.innerWidth <=768){
-      nav.style.display='none';
-      dropdownMenu.style.display='none';
-    }
-  });
-});
-
-window.addEventListener('resize', handleResize);
-window.addEventListener('load', handleResize);
-</script>
 
 <!-- ================= CONTACT SECTION ================= -->
 <section class="contact-section">
@@ -262,86 +253,123 @@ window.addEventListener('load', handleResize);
 
 <!-- LEFT FRAME -->
 <div class="contact-box left-box">
-
 <h2 style="color:#D4AF37;">Registered Office</h2>
-
 <p style="line-height:1.8;color:#ccc;">
 #22/23, 2nd Floor, TR Plaza Double Road<br>
 Above Lenskart, Rajarajeshwari Nagar<br>
 Bengaluru – 560098, India
 </p>
-
 <hr style="margin:25px 0;border:0;border-top:1px solid rgba(255,255,255,0.1);">
-
 <h3 style="color:#D4AF37;">Contact</h3>
 <p>📞 <a href="tel:+919663938889" style="color:#ccc;text-decoration:none;">+91 96639 38889</a></p>
 <p>✉ <a href="mailto:ContactUs@terrafluxgv.com" style="color:#ccc;text-decoration:none;">ContactUs@terrafluxgv.com</a></p>
 <p>🌐 <a href="https://www.terrafluxgv.com" target="_blank" style="color:#ccc;text-decoration:none;">www.terrafluxgv.com</a></p>
-
 <div class="social-buttons">
 <a href="https://facebook.com" target="_blank">Facebook</a>
 <a href="https://instagram.com" target="_blank">Instagram</a>
 <a href="https://linkedin.com" target="_blank">LinkedIn</a>
 <a href="https://twitter.com" target="_blank">Twitter</a>
 </div>
-
 </div>
 
 <!-- RIGHT FRAME -->
 <div class="contact-box right-box">
-
 <h2 style="color:#D4AF37;">Find Us On Map</h2>
-
-<iframe
-src="https://www.google.com/maps?q=Rajarajeshwari%20Nagar%20Bengaluru&output=embed"
-width="100%"
-height="300"
-style="border:0;border-radius:12px;margin-bottom:25px;"
-allowfullscreen=""
-loading="lazy">
-</iframe>
-
+<iframe src="https://www.google.com/maps?q=Rajarajeshwari%20Nagar%20Bengaluru&output=embed"
+width="100%" height="300" style="border:0;border-radius:12px;margin-bottom:25px;" allowfullscreen="" loading="lazy"></iframe>
 <h3 style="color:#D4AF37;">Send Message</h3>
-
 <form>
 <input type="text" placeholder="Your Name" required>
 <input type="email" placeholder="Your Email" required>
 <textarea rows="4" placeholder="Your Message" required></textarea>
 <button type="submit">Send Message</button>
 </form>
-
 </div>
 
 </div>
 </section>
 
-<!-- ================= SCRIPTS ================= -->
 <script>
+// Header mobile toggle
+const navLinks = document.getElementById('navLinks');
+const dropdownMenu = document.querySelector('.dropdown-menu');
+const hamburger = document.querySelector('.hamburger');
+const dropdown = document.querySelector('.dropdown');
 
-// Mobile Toggle
-const menuToggle=document.getElementById("menuToggle");
-const navMenu=document.getElementById("navMenu");
+function toggleMenu(){
+  if(navLinks.style.display === 'flex'){
+    navLinks.style.display = 'none';
+  } else {
+    navLinks.style.display = 'flex';
+    navLinks.style.flexDirection = 'column';
+    navLinks.style.background = 'rgba(13,13,13,0.95)';
+    navLinks.style.position = 'absolute';
+    navLinks.style.top = '60px';
+    navLinks.style.right = '8%';
+    navLinks.style.padding = '15px';
+    navLinks.style.borderRadius = '8px';
+    navLinks.style.boxShadow = '0 2px 10px rgba(0,0,0,0.3)';
+  }
+}
 
-menuToggle.addEventListener("click",()=>{
-navMenu.style.display = navMenu.style.display==="flex" ? "none" : "flex";
+// Dropdown toggle on mobile
+function toggleDropdown(e){
+  if(window.innerWidth <= 768){
+    e.preventDefault();
+    dropdownMenu.style.display = (dropdownMenu.style.display === 'block') ? 'none' : 'block';
+  }
+}
+
+// Close mobile menu when link clicked
+navLinks.querySelectorAll('a').forEach(link=>{
+  link.addEventListener('click', ()=>{
+    if(window.innerWidth <=768){
+      navLinks.style.display='none';
+      dropdownMenu.style.display='none';
+    }
+  });
 });
 
-// Scroll Animation
+// Desktop hover dropdown
+dropdown.addEventListener('mouseenter', ()=>{
+  if(window.innerWidth > 768) dropdownMenu.style.display='block';
+});
+dropdown.addEventListener('mouseleave', ()=>{
+  if(window.innerWidth > 768) dropdownMenu.style.display='none';
+});
+
+// Responsive adjustments
+function handleResize(){
+  if(window.innerWidth > 768){
+    navLinks.style.display = 'flex';
+    navLinks.style.flexDirection = 'row';
+    navLinks.style.position = 'static';
+    navLinks.style.background = 'transparent';
+    navLinks.style.padding = '0';
+    navLinks.style.boxShadow = 'none';
+    hamburger.style.display = 'none';
+    dropdownMenu.style.display = 'none';
+  } else {
+    navLinks.style.display='none';
+    hamburger.style.display='flex';
+    dropdownMenu.style.display='none';
+  }
+}
+
+window.addEventListener('resize', handleResize);
+window.addEventListener('load', handleResize);
+
+// Scroll animation
 const boxes=document.querySelectorAll(".contact-box");
-
 function revealBoxes(){
-const trigger=window.innerHeight*0.85;
-boxes.forEach(box=>{
-const top=box.getBoundingClientRect().top;
-if(top<trigger){
-box.classList.add("show");
+  const trigger=window.innerHeight*0.85;
+  boxes.forEach(box=>{
+    const top=box.getBoundingClientRect().top;
+    if(top<trigger) box.classList.add("show");
+  });
 }
-});
-}
-
 window.addEventListener("scroll",revealBoxes);
 window.addEventListener("load",revealBoxes);
-
 </script>
 
 </body>
