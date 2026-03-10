@@ -19,45 +19,12 @@ body{
   overflow-x:hidden;
 }
 
-/* NAV */
-header{
-  position:fixed;
-  width:100%;
-  top:0;
-  background:rgba(0,0,0,0.85);
-  backdrop-filter:blur(10px);
-  padding:18px 8%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  z-index:1000;
-}
 
-.logo{
-  color:var(--primary);
-  font-weight:bold;
-  letter-spacing:2px;
-}
-
-nav{
-  display:flex;
-  gap:30px;
-}
-
-nav a{
-  color:#ccc;
-  text-decoration:none;
-  transition:.3s;
-}
-
-nav a:hover{
-  color:var(--primary);
-}
 
 /* HERO */
 .hero{
   height:90vh;
-  background:url("https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=2070") center/cover no-repeat;
+  background:url("Assets/img12.png") center/cover no-repeat;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -213,16 +180,65 @@ footer p{color:#777;margin-top:10px;}
 
 <body>
 
-<header>
-  <div class="logo">TERRAFLUX</div>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Logistics</a>
-    <a href="#" style="color:var(--primary)">Warehousing</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
+<header style="position:fixed; top:0; left:0; width:100%; background:rgba(13,13,13,0.95); color:#fff; display:flex; justify-content:space-between; align-items:center; padding:12px 8%; font-family:Arial, sans-serif; z-index:1000; box-shadow:0 2px 10px rgba(0,0,0,0.3);">
+  <!-- Logo -->
+  <div class="logo" style="font-size:1.8rem; font-weight:bold; color:#D4AF37;">TERRAFLUX</div>
+
+  <!-- Hamburger for mobile -->
+  <div class="hamburger" style="display:none; flex-direction:column; cursor:pointer;" onclick="toggleMenu(this)">
+    <span style="height:3px; width:25px; background:#D4AF37; margin:4px 0; border-radius:2px;"></span>
+    <span style="height:3px; width:25px; background:#D4AF37; margin:4px 0; border-radius:2px;"></span>
+    <span style="height:3px; width:25px; background:#D4AF37; margin:4px 0; border-radius:2px;"></span>
+  </div>
+
+  <!-- Navigation Links -->
+  <nav id="navLinks" style="display:flex; gap:20px; align-items:center;">
+    <a href="index.html" style="text-decoration:none; color:#fff;">Home</a>
+    <a href="logistics.html" style="text-decoration:none; color:#fff;">Logistics</a>
+    <a href="warehousing.html" style="text-decoration:none; color:#D4AF37;">Warehousing</a>
+    <a href="about.html" style="text-decoration:none; color:#fff;">About</a>
+    <a href="contact.html" style="text-decoration:none; color:#fff;">Contact</a>
   </nav>
 </header>
+
+<script>
+  const nav = document.getElementById('navLinks');
+  const hamburger = document.querySelector('.hamburger');
+
+  function toggleMenu() {
+    if (nav.style.display === 'flex' && window.innerWidth <= 768) {
+      nav.style.display = 'none';
+    } else {
+      nav.style.display = 'flex';
+      nav.style.flexDirection = 'column';
+      nav.style.background = 'rgba(13,13,13,0.95)';
+      nav.style.position = 'absolute';
+      nav.style.top = '60px';
+      nav.style.right = '8%';
+      nav.style.padding = '15px';
+      nav.style.borderRadius = '8px';
+      nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.3)';
+    }
+  }
+
+  function handleResize() {
+    if (window.innerWidth <= 768) {
+      nav.style.display = 'none';
+      hamburger.style.display = 'flex';
+    } else {
+      nav.style.display = 'flex';
+      nav.style.flexDirection = 'row';
+      nav.style.position = 'static';
+      nav.style.background = 'transparent';
+      nav.style.padding = '0';
+      nav.style.boxShadow = 'none';
+      hamburger.style.display = 'none';
+    }
+  }
+
+  window.addEventListener('resize', handleResize);
+  window.addEventListener('load', handleResize);
+</script>
 
 <!-- HERO -->
 <section class="hero">
@@ -477,7 +493,7 @@ process.forEach(el=>processObserver.observe(el));
            onmouseout="this.style.transform='scale(1)'">
 
       <!-- Gallery Image 2 -->
-      <img src="https://images.unsplash.com/photo-1605902711622-cfb43c4437d1?q=80&w=600"
+      <img src="Assets/img13.png"
            style="
              width:160px;
              height:110px;
@@ -582,12 +598,12 @@ style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:12px; trans
 <!-- CYCLIC ROTATION SCRIPT -->
 <script>
 const images=[
-"https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=600",
-"https://images.unsplash.com/photo-1605902711622-cfb43c4437d1?q=80&w=600",
-"https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=600",
-"https://images.unsplash.com/photo-1581091870627-3c64f6a3e93f?q=80&w=600",
-"https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=600",
-"https://images.unsplash.com/photo-1565610222536-ef125c59da2e?q=80&w=600"
+"Assets/img4.png",
+"Assets/img5.png",
+"Assets/img1.png",
+"Assets/img7.png",
+"Assets/img2.png",
+"Assets/img9.png"
 ];
 
 let index=0;
@@ -629,7 +645,7 @@ textObserver.observe(el);
 <!-- SPLIT -->
 <section class="section">
   <div class="split">
-    <img src="https://images.unsplash.com/photo-1581092919532-7a3b4e4a7f3a?q=80&w=2070">
+    <img src="Assets/img8.png">
     <div class="split-text">
       <h2 class="section-title">Integrated Distribution Centers</h2>
       <p class="section-sub">
