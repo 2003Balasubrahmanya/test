@@ -803,63 +803,195 @@ box-shadow:0 10px 25px rgba(212,175,55,0.4);
 }
 
 </style>
-<footer style="background:#000; color:#fff; font-family:'Playfair Display', serif; padding:80px 20px 30px 20px; position:relative; overflow:hidden;">
+<style>
 
-  <!-- Top Divider Glow -->
-  <div style="height:2px; width:100%; background:linear-gradient(90deg, transparent, #c9a227, transparent); margin-bottom:60px;"></div>
+/* ===== FOOTER ===== */
+.footer{
+background:#000 url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1') center/cover no-repeat;
+color:#fff;
+font-family:'Playfair Display', serif;
+padding:80px 20px 30px;
+position:relative;
+}
 
-  <div style="max-width:1200px; margin:auto; display:flex; flex-wrap:wrap; justify-content:space-between; gap:40px;">
+/* overlay */
+.footer::before{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.85);
+}
 
-    <!-- Brand Section -->
-    <div style="flex:1; min-width:250px;">
-      <h2 style="font-size:28px; letter-spacing:2px; color:#c9a227;">
-       TERRAFLUX GLOBAL VENTURES PVT LTD
-      </h2>
-      <p style="color:#aaa; margin-top:15px; line-height:1.8;">
-        Strength. Wisdom. Elegance.  
-        Inspired by the majestic spirit of the elephant, we craft timeless digital experiences with classic luxury aesthetics.
-      </p>
+/* container */
+.footer-container{
+position:relative;
+max-width:1200px;
+margin:auto;
+display:flex;
+flex-wrap:wrap;
+gap:40px;
+justify-content:space-between;
+}
 
-      <!-- Social Media -->
-      <div style="margin-top:25px; display:flex; gap:15px; flex-wrap:wrap;">
-        <a href="#" class="social-icon">Instagram</a>
-        <a href="#" class="social-icon">Facebook</a>
-        <a href="#" class="social-icon">Twitter</a>
-        <a href="mailto:info@elephantroyal.com" class="social-icon">Email</a>
-      </div>
-    </div>
+/* title */
+.footer-title{
+font-size:28px;
+color:#c9a227;
+letter-spacing:2px;
+}
 
-  
+/* text */
+.footer-text{
+color:#aaa;
+margin-top:15px;
+line-height:1.7;
+}
 
-    <!-- Contact Info -->
-    <div style="flex:1; min-width:200px;">
-      <h3 style="color:#c9a227; margin-bottom:20px;">Contact</h3>
-      <p style="color:#aaa; line-height:1.8;">
-        📍 Bangalore, India<br>
-        📞 +91 98765 43210<br>
-        ✉ info@elephantroyal.com
-      </p>
-    </div>
+/* headings */
+.footer-heading{
+color:#c9a227;
+margin-bottom:15px;
+}
 
-    <!-- Newsletter -->
-    <div style="flex:1; min-width:250px;">
-      <h3 style="color:#c9a227; margin-bottom:20px;">Subscribe</h3>
-      <p style="color:#aaa; margin-bottom:15px;">
-        Join our  community.
-      </p>
-      <input type="email" placeholder="Enter your email"
-        style="width:100%; padding:12px; border:none; outline:none; border-radius:5px; margin-bottom:10px;">
-      <button style="width:100%; padding:12px; background:#c9a227; border:none; color:black; font-weight:bold; border-radius:5px; cursor:pointer; transition:0.3s;">
-        Subscribe
-      </button>
-    </div>
+/* social */
+.social-links{
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+margin-top:20px;
+}
 
-  </div>
+.social-links a{
+color:#c9a227;
+border:1px solid #c9a227;
+padding:8px 14px;
+text-decoration:none;
+border-radius:5px;
+transition:.3s;
+}
 
-  <!-- Bottom Section -->
-  <div style="margin-top:60px; text-align:center; border-top:1px solid rgba(255,255,255,0.1); padding-top:20px; color:#777;">
-    © 2026 TERRAFLUX GLOBAL VENTURES PVT LTD. All Rights Reserved.
-  </div>
+.social-links a:hover{
+background:#c9a227;
+color:#000;
+transform:translateY(-3px);
+}
+
+/* input */
+.footer input{
+width:100%;
+padding:12px;
+border:none;
+border-radius:5px;
+margin-bottom:10px;
+}
+
+/* button */
+.footer button{
+width:100%;
+padding:12px;
+background:#c9a227;
+border:none;
+font-weight:bold;
+border-radius:5px;
+cursor:pointer;
+transition:.3s;
+}
+
+.footer button:hover{
+background:#fff;
+transform:scale(1.05);
+}
+
+/* divider */
+.footer-divider{
+height:2px;
+background:linear-gradient(90deg,transparent,#c9a227,transparent);
+margin-bottom:60px;
+}
+
+/* bottom */
+.footer-bottom{
+margin-top:60px;
+text-align:center;
+border-top:1px solid rgba(255,255,255,0.1);
+padding-top:20px;
+color:#777;
+font-size:14px;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+
+.footer-container{
+flex-direction:column;
+text-align:center;
+}
+
+.footer-title{
+font-size:22px;
+}
+
+.social-links{
+justify-content:center;
+}
+
+}
+
+</style>
+
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<div style="width:100%">
+<div class="footer-divider"></div>
+</div>
+
+<!-- Brand -->
+<div style="flex:1;min-width:250px;">
+<h2 class="footer-title">TERRAFLUX GLOBAL VENTURES PVT LTD</h2>
+
+<p class="footer-text">
+Strength. Wisdom. Elegance. Inspired by the majestic spirit of the elephant,
+we craft timeless digital experiences with classic luxury aesthetics.
+</p>
+
+<div class="social-links">
+<a href="#">Instagram</a>
+<a href="#">Facebook</a>
+<a href="#">Twitter</a>
+<a href="mailto:info@elephantroyal.com">Email</a>
+</div>
+</div>
+
+<!-- Contact -->
+<div style="flex:1;min-width:200px;">
+<h3 class="footer-heading">Contact</h3>
+
+<p class="footer-text">
+📍 Bangalore, India<br>
+📞 +91 98765 43210<br>
+✉ info@elephantroyal.com
+</p>
+</div>
+
+<!-- Newsletter -->
+<div style="flex:1;min-width:250px;">
+<h3 class="footer-heading">Subscribe</h3>
+
+<p class="footer-text">Join our community.</p>
+
+<input type="email" placeholder="Enter your email">
+
+<button>Subscribe</button>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 TERRAFLUX GLOBAL VENTURES PVT LTD. All Rights Reserved.
+</div>
 
 </footer>
 </body>
