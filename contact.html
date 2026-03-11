@@ -86,19 +86,26 @@
         }
     </style>
 </head>
-
+<body>
 
 <header>
     <a href="Assets/Terraflux Global Venture Pvt Ltd (Logo).jpg.jpeg" class="logo">TERRAFLUX</a>
 
-  
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 
     <nav id="navLinks"> 
-        <a href="home.html">Home</a>
+        <a href=".html">Home</a>
         <div class="dropdown">
-            <a href="logistics.html" class="dropbtn">Logistics </a>
+            <a href="logistics.html" class="dropbtn">Logistics ▾</a>
             <div class="dropdown-menu" id="logisticMenu">
-        
+                <a href="logistics.html">Road Freight</a>
+                <a href="logistics.html">Sea Freight</a>
+                <a href="logistics.html">Air Cargo</a>
+            </div>
         </div>
         <a href="warehousing.html">Warehousing</a>
         <a href="about.html">About</a>
@@ -142,140 +149,850 @@
         }
     });
 </script>
-<body>
+<!-- HERO SECTION -->
+<section id="hero" style="
+height:500px;
+width:100%;
+overflow:hidden;
+position:relative;
+">
 
-    <section class="contact-section">
-  <div class="contact-wrapper">
+<div id="slides" style="
+display:flex;
+height:100%;
+transition:transform 1s ease-in-out;
+">
 
-    <!-- LEFT BOX -->
-    <div class="contact-box left-box">
-      <h2>Our Location</h2>
-      <p>
-        #22/23, 2nd Floor, TR Plaza Double Road,<br>
-        Above Lenskart, Rajarajeshwari Nagar,<br>
-        Bengaluru – 560098, India
-      </p>
-      <iframe src="https://www.google.com/maps?q=Rajarajeshwari%20Nagar%20Bengaluru&output=embed"
-        width="100%" height="250" allowfullscreen="" loading="lazy"></iframe>
-    </div>
+<!-- Slide 1 -->
+<div style="
+min-width:100%;
+height:100%;
+background:url('Assets/img16.png') center center / cover no-repeat;
+display:flex;
+justify-content:center;
+align-items:center;
+">
+<h1 style="color:#d4af37;font-size:48px;">Premium Spices</h1>
+</div>
 
-    <!-- RIGHT BOX -->
-    <div class="contact-box right-box">
-      <h2>Connect With Us</h2>
-      <p>✉ <a href="mailto:ContactUs@terrafluxgv.com">ContactUs@terrafluxgv.com</a></p>
-      <div class="social-buttons">
-        <a href="https://facebook.com" target="_blank">Facebook</a>
-        <a href="https://instagram.com" target="_blank">Instagram</a>
-        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-        <a href="https://twitter.com" target="_blank">Twitter</a>
-      </div>
-    </div>
+<!-- Slide 2 -->
+<div style="
+min-width:100%;
+height:100%;
+background:url('Assets/img4.png') center center / cover no-repeat;
+display:flex;
+justify-content:center;
+align-items:center;
+">
+<h1 style="color:#d4af37;font-size:48px;">Global Trade</h1>
+</div>
 
-  </div>
+<!-- Slide 3 -->
+<div style="
+min-width:100%;
+height:100%;
+background:url('Assets/img18.png') center center / cover no-repeat;
+display:flex;
+justify-content:center;
+align-items:center;
+">
+<h1 style="color:#d4af37;font-size:48px;">Reliable Logistics</h1>
+</div>
+
+<!-- Slide 4 -->
+<div style="
+min-width:100%;
+height:100%;
+background:url('Assets/img19.png') center center / cover no-repeat;
+display:flex;
+justify-content:center;
+align-items:center;
+">
+<h1 style="color:#d4af37;font-size:48px;">Phoenix Inspired</h1>
+</div>
+
+<!-- Slide 5 -->
+<div style="
+min-width:100%;
+height:100%;
+background:url('Assets/img5.png') center center / cover no-repeat;
+display:flex;
+justify-content:center;
+align-items:center;
+">
+<h1 style="color:#d4af37;font-size:48px;">Consistent Excellence</h1>
+</div>
+
+</div>
+
 </section>
 
+<script>
+
+let slideIndex = 0;
+const slides = document.getElementById("slides");
+const totalSlides = slides.children.length;
+
+function nextSlide(){
+slideIndex = (slideIndex + 1) % totalSlides;
+slides.style.transform = "translateX(-" + slideIndex*100 + "%)";
+}
+
+setInterval(nextSlide,4000);
+
+</script>
+<!-- ================= SERVICES SECTION ================= -->
+
+<section id="services" style="
+padding:100px 8%;
+background:#0b0b0f;
+color:white;
+text-align:center;
+font-family:Segoe UI, sans-serif;
+">
+
+<h2 style="
+color:#d4af37;
+font-size:40px;
+margin-bottom:20px;
+letter-spacing:1px;
+">
+Our Services
+</h2>
+
+<p style="color:#bbb;margin-bottom:60px;">
+Reliable solutions designed to power global trade and logistics.
+</p>
+
+<div class="services-grid">
+
+<!-- Service 1 -->
+<div class="service-card">
+<div class="icon">🚚</div>
+<h3>Global Logistics</h3>
+<p>
+Efficient international logistics solutions ensuring safe
+and timely delivery across global markets.
+</p>
+</div>
+
+<!-- Service 2 -->
+<div class="service-card">
+<div class="icon">🏬</div>
+<h3>Warehousing</h3>
+<p>
+Secure storage facilities designed to maintain product
+quality and streamline supply chains.
+</p>
+</div>
+
+<!-- Service 3 -->
+<div class="service-card">
+<div class="icon">🌍</div>
+<h3>Export & Trade</h3>
+<p>
+Specialized export services connecting premium products
+to international markets with reliability.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
 <style>
-/* ===== ELEPHANT BLACK + GOLD THEME ===== */
-body {
-  background:#1c1c1c; /* dark elephant black */
-  color:#fff;
-  font-family: 'Segoe UI', sans-serif;
+
+/* Grid Layout */
+.services-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
 }
 
-.contact-section{
-  min-height:100vh;
-  padding:120px 8% 100px 8%;
+/* Card Design */
+.service-card{
+background:#111;
+padding:40px 30px;
+border-radius:14px;
+border:1px solid rgba(212,175,55,0.3);
+transition:all .4s ease;
+position:relative;
+overflow:hidden;
 }
 
-.contact-wrapper{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
-  gap:50px;
+/* Icon */
+.icon{
+font-size:40px;
+margin-bottom:15px;
+transition:transform .4s ease;
 }
 
-.contact-box{
-  background: rgba(30,30,30,0.6); /* darker translucent black */
-  padding:35px;
-  border-radius:15px;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 25px 70px rgba(0,0,0,0.8);
-  opacity:0;
-  transform: translateY(50px);
-  transition: all 0.8s ease;
-  cursor: default;
-  border:1px solid #D4AF37; /* subtle gold outline */
+/* Title */
+.service-card h3{
+color:#d4af37;
+margin-bottom:12px;
 }
 
-.contact-box h2{
-  margin-bottom:20px;
-  color:#D4AF37; /* gold headings */
+/* Text */
+.service-card p{
+color:#bbb;
+line-height:1.6;
 }
 
-.contact-box p{
-  margin-bottom:15px;
-  color:#ccc;
+/* Hover Animation */
+.service-card:hover{
+transform:translateY(-12px) scale(1.03);
+box-shadow:0 20px 40px rgba(212,175,55,0.2);
+border-color:#d4af37;
 }
 
-.contact-box iframe{
-  border-radius:12px;
-  border:1px solid #D4AF37;
+/* Icon animation */
+.service-card:hover .icon{
+transform:scale(1.2) rotate(6deg);
 }
 
-/* Hover animation for boxes */
-.contact-box:hover{
-  transform: translateY(-10px);
-  box-shadow: 0 35px 90px rgba(0,0,0,0.9);
+/* Gold glow effect */
+.service-card::before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(120deg,transparent,rgba(212,175,55,0.3),transparent);
+transition:.6s;
 }
 
-/* Scroll reveal */
-.contact-box.show{
-  opacity:1;
-  transform: translateY(0);
+.service-card:hover::before{
+left:100%;
 }
 
-/* Social buttons */
-.contact-box .social-buttons{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
+</style>
+
+<!-- ================= WHY CHOOSE US ================= -->
+
+<section id="why" style="
+padding:100px 8%;
+background:#111;
+color:white;
+font-family:Segoe UI, sans-serif;
+overflow:hidden;
+">
+
+<h2 style="
+text-align:center;
+color:#d4af37;
+font-size:40px;
+margin-bottom:70px;
+">
+Why Choose Terraflux
+</h2>
+
+<div class="split-section">
+
+<!-- Left Image -->
+<div class="slide-left">
+<img src="Assets/img6.png" style="
+width:100%;
+border-radius:12px;
+box-shadow:0 20px 40px rgba(0,0,0,0.6);
+">
+</div>
+
+<!-- Right Text -->
+<div class="slide-right">
+<h3 style="color:#d4af37;">Reliable Global Network</h3>
+<p style="color:#bbb;line-height:1.7;">
+Our logistics infrastructure connects suppliers and buyers
+across continents, ensuring smooth international trade
+and efficient supply chain management.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<style>
+
+/* Layout */
+.split-section{
+display:flex;
+align-items:center;
+gap:60px;
+flex-wrap:wrap;
 }
 
-.contact-box .social-buttons a{
-  padding:6px 12px;
-  border:1px solid #D4AF37;
-  border-radius:20px;
-  color:#D4AF37;
-  text-decoration:none;
-  transition: all 0.3s ease;
+/* Left Animation */
+.slide-left{
+flex:1;
+min-width:300px;
+transform:translateX(-100px);
+opacity:0;
+transition:1s;
 }
 
-.contact-box .social-buttons a:hover{
-  background:#D4AF37;
-  color:#1c1c1c;
-  transform: scale(1.1);
-  box-shadow: 0 5px 15px rgba(212,175,55,0.5);
+/* Right Animation */
+.slide-right{
+flex:1;
+min-width:300px;
+transform:translateX(100px);
+opacity:0;
+transition:1s;
+}
+
+/* Active animation */
+.show{
+transform:translateX(0);
+opacity:1;
+}
+
+/* Mobile */
+@media(max-width:800px){
+.split-section{
+flex-direction:column;
+text-align:center;
+}
+}
+
+</style>
+
+
+<script>
+
+/* Scroll Animation */
+
+const elements = document.querySelectorAll(".slide-left, .slide-right");
+
+function revealOnScroll(){
+
+elements.forEach(el=>{
+const position = el.getBoundingClientRect().top;
+const screenHeight = window.innerHeight;
+
+if(position < screenHeight - 100){
+el.classList.add("show");
+}
+
+});
+
+}
+
+window.addEventListener("scroll", revealOnScroll);
+
+</script>
+
+<!-- ================= GLOBAL OPERATIONS ================= -->
+
+
+<!-- ================= ABOUT SECTION ================= -->
+
+<section id="about" style="
+padding:100px 8%;
+background:#111;
+color:white;
+font-family:Segoe UI, sans-serif;
+">
+
+<div class="about-container">
+
+<!-- Image Side -->
+<div class="about-image">
+<img src="Assets/img10.png" alt="Terraflux Logistics">
+</div>
+
+<!-- Text Side -->
+<div class="about-text">
+<h2>About Terraflux</h2>
+
+<p>
+Terraflux Global Ventures Pvt Ltd is dedicated to delivering
+high-quality products and reliable logistics solutions across
+international markets. Our commitment to excellence ensures
+that every shipment meets the highest standards of quality
+and efficiency.
+</p>
+
+<p>
+With strong partnerships and a global network, we specialize
+in exporting premium goods while maintaining transparency,
+trust, and long-term business relationships with clients
+around the world.
+</p>
+
+<button class="about-btn">Learn More</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<style>
+
+/* Layout */
+.about-container{
+display:flex;
+align-items:center;
+gap:60px;
+flex-wrap:wrap;
+}
+
+/* Image */
+.about-image{
+flex:1;
+min-width:300px;
+overflow:hidden;
+border-radius:12px;
+}
+
+.about-image img{
+width:100%;
+transition:0.5s;
+}
+
+/* Hover zoom */
+.about-image:hover img{
+transform:scale(1.08);
+}
+
+/* Text */
+.about-text{
+flex:1;
+min-width:300px;
+}
+
+.about-text h2{
+color:#d4af37;
+font-size:36px;
+margin-bottom:20px;
+}
+
+.about-text p{
+color:#bbb;
+line-height:1.7;
+margin-bottom:15px;
+}
+
+/* Button */
+.about-btn{
+background:#d4af37;
+border:none;
+padding:12px 28px;
+color:black;
+font-weight:bold;
+border-radius:6px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.about-btn:hover{
+background:#f5d76e;
+transform:translateY(-3px);
+}
+
+@media(max-width:900px){
+.about-container{
+flex-direction:column;
+text-align:center;
+}
+}
+
+</style>
+
+<!-- ================= COMPANY VALUES SECTION ================= -->
+
+<section id="values" style="
+padding:100px 8%;
+background:#0b0b0f;
+color:white;
+font-family:Segoe UI, sans-serif;
+text-align:center;
+">
+
+<h2 style="
+color:#d4af37;
+font-size:38px;
+margin-bottom:60px;
+">
+Our Core Principles
+</h2>
+
+<div class="values-grid">
+
+<!-- Mission Card -->
+<div class="value-card">
+<div class="icon">🚀</div>
+<h3>Our Mission</h3>
+<p>
+To deliver high-quality global trade and logistics solutions
+that connect markets and empower businesses worldwide.
+</p>
+</div>
+
+<!-- Vision Card -->
+<div class="value-card">
+<div class="icon">🌍</div>
+<h3>Our Vision</h3>
+<p>
+To become a trusted international partner known for
+efficiency, transparency, and excellence in global logistics.
+</p>
+</div>
+
+<!-- Values Card -->
+<div class="value-card">
+<div class="icon">🤝</div>
+<h3>Our Values</h3>
+<p>
+Integrity, reliability, and innovation guide every decision
+we make while building long-term partnerships.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<style>
+
+/* Grid layout */
+.values-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:40px;
+}
+
+/* Card design */
+.value-card{
+background:#111;
+padding:40px 30px;
+border-radius:14px;
+border:1px solid rgba(212,175,55,0.3);
+transition:all .4s ease;
+position:relative;
+overflow:hidden;
+}
+
+/* Icon */
+.icon{
+font-size:40px;
+margin-bottom:15px;
+}
+
+/* Title */
+.value-card h3{
+color:#d4af37;
+margin-bottom:12px;
+}
+
+/* Text */
+.value-card p{
+color:#bbb;
+line-height:1.6;
+}
+
+/* Hover animation */
+.value-card:hover{
+transform:translateY(-10px) scale(1.03);
+box-shadow:0 20px 40px rgba(212,175,55,0.2);
+border-color:#d4af37;
+}
+
+/* Glow sweep animation */
+.value-card::before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(120deg,transparent,rgba(212,175,55,0.3),transparent);
+transition:0.6s;
+}
+
+.value-card:hover::before{
+left:100%;
+}
+
+</style>
+
+<section style="
+padding:100px 0;
+background:#0b0b0f;
+color:white;
+text-align:center;
+font-family:Segoe UI, sans-serif;
+overflow:hidden;
+">
+
+<h2 style="
+color:#d4af37;
+font-size:38px;
+margin-bottom:60px;
+">
+Our Global Operations
+</h2>
+
+<!-- Slider Track -->
+<div class="slider">
+
+<div class="slide-track">
+
+<img src="Assets/img1.png">
+<img src="Assets/img2.png">
+<img src="Assets/img3.png">
+<img src="Assets/img4.png">
+<img src="Assets/img5.png">
+<img src="Assets/img6.png">
+
+<!-- duplicate for smooth infinite scroll -->
+<img src="Assets/img1.png">
+<img src="Assets/img2.png">
+<img src="Assets/img3.png">
+<img src="Assets/img4.png">
+<img src="Assets/img5.png">
+<img src="Assets/img6.png">
+
+</div>
+
+</div>
+
+</section>
+
+
+<style>
+
+/* Slider container */
+.slider{
+overflow:hidden;
+width:100%;
+}
+
+/* Moving track */
+.slide-track{
+display:flex;
+width:calc(250px * 12);
+animation:scroll 25s linear infinite;
+}
+
+/* Images */
+.slide-track img{
+width:250px;
+height:160px;
+object-fit:cover;
+margin:0 20px;
+border-radius:12px;
+transition:.4s;
+}
+
+/* Hover effect */
+.slide-track img:hover{
+transform:scale(1.1);
+box-shadow:0 10px 25px rgba(212,175,55,0.4);
+}
+
+/* Animation */
+@keyframes scroll{
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
+}
+
+</style>
+<style>
+
+/* ===== FOOTER ===== */
+.footer{
+background:#000 url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1') center/cover no-repeat;
+color:#fff;
+font-family:'Playfair Display', serif;
+padding:80px 20px 30px;
+position:relative;
+}
+
+/* overlay */
+.footer::before{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.85);
+}
+
+/* container */
+.footer-container{
+position:relative;
+max-width:1200px;
+margin:auto;
+display:flex;
+flex-wrap:wrap;
+gap:40px;
+justify-content:space-between;
+}
+
+/* title */
+.footer-title{
+font-size:28px;
+color:#c9a227;
+letter-spacing:2px;
+}
+
+/* text */
+.footer-text{
+color:#aaa;
+margin-top:15px;
+line-height:1.7;
+}
+
+/* headings */
+.footer-heading{
+color:#c9a227;
+margin-bottom:15px;
+}
+
+/* social */
+.social-links{
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+margin-top:20px;
+}
+
+.social-links a{
+color:#c9a227;
+border:1px solid #c9a227;
+padding:8px 14px;
+text-decoration:none;
+border-radius:5px;
+transition:.3s;
+}
+
+.social-links a:hover{
+background:#c9a227;
+color:#000;
+transform:translateY(-3px);
+}
+
+/* input */
+.footer input{
+width:100%;
+padding:12px;
+border:none;
+border-radius:5px;
+margin-bottom:10px;
+}
+
+/* button */
+.footer button{
+width:100%;
+padding:12px;
+background:#c9a227;
+border:none;
+font-weight:bold;
+border-radius:5px;
+cursor:pointer;
+transition:.3s;
+}
+
+.footer button:hover{
+background:#fff;
+transform:scale(1.05);
+}
+
+/* divider */
+.footer-divider{
+height:2px;
+background:linear-gradient(90deg,transparent,#c9a227,transparent);
+margin-bottom:60px;
+}
+
+/* bottom */
+.footer-bottom{
+margin-top:60px;
+text-align:center;
+border-top:1px solid rgba(255,255,255,0.1);
+padding-top:20px;
+color:#777;
+font-size:14px;
 }
 
 /* ===== MOBILE ===== */
 @media(max-width:768px){
-  .contact-wrapper{
-    grid-template-columns:1fr;
-  }
+
+.footer-container{
+flex-direction:column;
+text-align:center;
 }
+
+.footer-title{
+font-size:22px;
+}
+
+.social-links{
+justify-content:center;
+}
+
+}
+
 </style>
 
-<script>
-// Scroll animation for contact boxes
-const boxes=document.querySelectorAll(".contact-box");
-function revealBoxes(){
-  const trigger=window.innerHeight*0.85;
-  boxes.forEach(box=>{
-    const top=box.getBoundingClientRect().top;
-    if(top<trigger) box.classList.add("show");
-  });
-}
-window.addEventListener("scroll",revealBoxes);
-window.addEventListener("load",revealBoxes);
-</script>
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<div style="width:100%">
+<div class="footer-divider"></div>
+</div>
+
+<!-- Brand -->
+<div style="flex:1;min-width:250px;">
+<h2 class="footer-title">TERRAFLUX GLOBAL VENTURES PVT LTD</h2>
+
+<p class="footer-text">
+Strength. Wisdom. Elegance. Inspired by the majestic spirit of the elephant,
+we craft timeless digital experiences with classic luxury aesthetics.
+</p>
+
+<div class="social-links">
+<a href="#">Instagram</a>
+<a href="#">Facebook</a>
+<a href="#">Twitter</a>
+<a href="mailto:info@elephantroyal.com">Email</a>
+</div>
+</div>
+
+<!-- Contact -->
+<div style="flex:1;min-width:200px;">
+<h3 class="footer-heading">Contact</h3>
+
+<p class="footer-text">
+📍 Bangalore, India<br>
+📞 +91 98765 43210<br>
+✉ info@elephantroyal.com
+</p>
+</div>
+
+<!-- Newsletter -->
+<div style="flex:1;min-width:250px;">
+<h3 class="footer-heading">Subscribe</h3>
+
+<p class="footer-text">Join our community.</p>
+
+<input type="email" placeholder="Enter your email">
+
+<button>Subscribe</button>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 TERRAFLUX GLOBAL VENTURES PVT LTD. All Rights Reserved.
+</div>
+
+</footer>
 </body>
 </html>
